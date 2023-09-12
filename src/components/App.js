@@ -1,11 +1,12 @@
 import React from "react";
 import "../styles/App.css";
 import SearchBar from "./SearchBar";
+import watchItLogo from "../images/watch-it.png";
 
 function App() {
   return (
     <div className="App">
-      <p>Hello World!</p>
+      <img className="watch-it-logo" src={watchItLogo} alt="Watch It Logo" />
       <SearchBar />
     </div>
   );
