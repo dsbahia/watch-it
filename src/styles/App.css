@@ -1,3 +1,12 @@
+body {
+  background-color: #EEEEEE;
+}
+
 .App {
   text-align: center;
+}
+
+.watch-it-logo {
+  width: 250px;
+  height: auto;
 }
