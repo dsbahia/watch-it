@@ -3,8 +3,9 @@
     color: #EEEEEE;
     border: none;
     padding: 10px;
-    border-radius: 3.5px;
-    width: 20%;
+    border-top-left-radius: 3.5px;
+    border-bottom-left-radius: 3.5px;
+    width: 300px;
    }
    .search-button {
     background-color: #00ADB5;
@@ -12,5 +13,6 @@
     border: none;
     padding: 10px;
     cursor: pointer;
-    border-radius: 3.5px;
+    border-top-right-radius: 3.5px;
+    border-bottom-right-radius: 3.5px;
    }
