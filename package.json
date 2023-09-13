@@ -61,5 +61,10 @@
     "prettier": "^3.0.3",
     "react-burger-menu": "^3.0.9",
     "sass": "^1.66.1"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "axios": "axios/dist/node/axios.cjs"
+    }
   }
 }
