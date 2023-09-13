@@ -1,11 +1,16 @@
 .search-input {
-    color: white;
     background-color: #393E46;
+    color: #EEEEEE;
+    border: none;
+    padding: 10px;
     border-radius: 3.5px;
-};
-
-.search-button {
-    border: 2px;
-    background-color: blue;
+    width: 20%;
+   }
+   .search-button {
+    background-color: #00ADB5;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
     border-radius: 3.5px;
-};
+   }
