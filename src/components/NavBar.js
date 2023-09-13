@@ -1,7 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import logo from "../Img/logo.jpg";
+import "../styles/navbar.css";
 
 function NavBar() {
-  return <div>NavBar</div>;
+  return (
+    <div className="navbar">
+      <div className="navbar-links-item" />
+
+      <Link className="item-upcoming" to="/">
+        Upcoming
+      </Link>
+
+      <Link className="item-trending" to="trending">
+        Trending
+      </Link>
+    </div>
+  );
 }
 
 export default NavBar;
