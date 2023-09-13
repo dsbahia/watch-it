@@ -6,9 +6,12 @@ import UpComing from "./UpComing";
 import Trending from "./Trending";
 import "../styles/App.css";
 
+import watchItLogo from "../images/watch-it.png";
+
 function App() {
   return (
-    <div className="app">
+    <div className="App">
+      <img className="watch-it-logo" src={watchItLogo} alt="Watch It Logo" />
       <SearchBar />
       <NavBar />
       <Routes>

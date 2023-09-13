@@ -10,9 +10,11 @@ function SearchBar() {
         <input
           className="search-input"
           type="text"
+          placeholder="Search"
           onChange={(e) => setValue(e.target.value)}
+          data-testid="search-input"
         />
-        <button className="search-btn" type="submit">
+        <button className="search-button" type="submit">
           Go!
         </button>
       </form>
