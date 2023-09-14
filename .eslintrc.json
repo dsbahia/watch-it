@@ -26,6 +26,7 @@
     ],
     "rules": {
         "quotes": [0],
+        "camelcase": "off",
         "react/prop-types": [0],
         "react/jsx-props-no-spreading": [0],
         "import/order": [1],
