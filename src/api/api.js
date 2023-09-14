@@ -3,7 +3,7 @@ import axios from "axios";
 async function searchMovies(query) {
   try {
     const response = await axios.get(
-      `${process.env.WATCH_IT_TMDB_BASE_URL}/search/movie`,
+      "https://api.themoviedb.org/3/search/movie",
       {
         params: {
           query,

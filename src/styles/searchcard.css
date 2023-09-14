@@ -1,0 +1,19 @@
+.search-card {
+    background-color:#393E46;
+    color: #EEEE;
+    height: 150px;
+    border-radius: 3.5px;
+}
+
+.poster-card {
+    margin: 10px;
+    padding-top: 10px;
+}
+
+.overview-card {
+    background-color: #EEEE;
+    color: #393E46;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 3.5px;
+}

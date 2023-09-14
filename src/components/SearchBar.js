@@ -1,12 +1,19 @@
 import React, { useState } from "react";
+import searchMovies from "../api/api";
 import "../styles/searchbar.css";
 
-function SearchBar() {
+function SearchBar({ setSearchResults }) {
   const [value, setValue] = useState();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setSearchResults(searchMovies(value));
+    console.log(value);
+  };
 
   return (
     <div className="search-bar">
-      <form className="search-form">
+      <form className="search-form" onSubmit={handleSubmit}>
         <input
           className="search-input"
           type="text"
