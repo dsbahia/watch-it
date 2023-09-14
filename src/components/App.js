@@ -12,14 +12,14 @@ function App() {
   const [searchResults, setSearchResults] = useState();
   return (
     <div className="App">
-      <img className="watch-it-logo" src={watchItLogo} alt="Watch It Logo" />
-      <SearchBar setSearchResults={setSearchResults} />
-      <SearchCard />
       <NavBar />
       <Routes>
         <Route path="/" element={UpComing} />
         <Route path="trending" element={Trending} />
       </Routes>
+      <img className="watch-it-logo" src={watchItLogo} alt="Watch It Logo" />
+      <SearchBar setSearchResults={setSearchResults} />
+      <SearchCard />
     </div>
   );
 }

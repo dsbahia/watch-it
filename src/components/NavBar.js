@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import "../styles/navbar.css";
 
 function NavBar() {
@@ -12,7 +11,7 @@ function NavBar() {
         Upcoming
       </Link>
 
-      <Link className="item-trending" to="trending">
+      <Link className="item-trending" to="/">
         Trending
       </Link>
     </div>
