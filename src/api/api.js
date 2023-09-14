@@ -9,7 +9,8 @@ async function searchMovies(query) {
           query,
         },
         headers: {
-          Authorization: `Bearer ${process.env.WATCH_IT_TMDB_BEARER_TOKEN}`,
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4NDAyNGMwMjk0ZGRjM2Q4MzE4OWI5NmRiNWE4OTIxNCIsInN1YiI6IjY0ZjhmNTA4NGNjYzUwMTg2NWIyNGQwOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.y4Bn1fM0Hu-Ux06lSwVeVRNIcSmyo2ylr20GC16beBs",
         },
       },
     );
