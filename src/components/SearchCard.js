@@ -9,7 +9,7 @@ function SearchCard({ title, posterpath, overview }) {
         {" "}
         <img
           alt="Movie poster"
-          src={`https://image.tmdb.org/t/p/w45/${posterpath}`}
+          src={`https://image.tmdb.org/t/p/w92/${posterpath}`}
         />
       </div>
       <div className="title-card">{title}</div>
