@@ -5,9 +5,9 @@ import "../styles/searchbar.css";
 function SearchBar({ setSearchResults }) {
   const [value, setValue] = useState();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    setSearchResults(searchMovies(value));
+    setSearchResults(await searchMovies(value));
     console.log(value);
   };
 
