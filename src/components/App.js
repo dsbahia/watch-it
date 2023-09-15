@@ -9,7 +9,7 @@ import SearchResultsCard from "./SearchResultsCard";
 import "../styles/App.css";
 
 function App() {
-  const [searchResults, setSearchResults] = useState();
+  const [searchResults, setSearchResults] = useState({ data: { results: [] } });
 
   return (
     <div className="App">

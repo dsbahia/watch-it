@@ -3,7 +3,7 @@ import searchMovies from "../api/api";
 import "../styles/searchbar.css";
 
 function SearchBar({ setSearchResults }) {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
