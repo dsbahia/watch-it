@@ -9,15 +9,14 @@ async function searchMovies(query) {
           query,
         },
         headers: {
-          Authorization: `Bearer ${process.env.WATCH_IT_TMDB_BEARER_TOKEN}`,
+          Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
         },
       },
     );
     console.log(response);
     return response;
   } catch (error) {
-    console.log("API request failed:", error);
-    throw new Error("Failed to fetch data from the API");
+    throw new Error("Failed to fetch data from the API", error);
   }
 }
 
