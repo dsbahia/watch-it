@@ -9,16 +9,14 @@ async function searchMovies(query) {
           query,
         },
         headers: {
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4NDAyNGMwMjk0ZGRjM2Q4MzE4OWI5NmRiNWE4OTIxNCIsInN1YiI6IjY0ZjhmNTA4NGNjYzUwMTg2NWIyNGQwOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.y4Bn1fM0Hu-Ux06lSwVeVRNIcSmyo2ylr20GC16beBs",
+          Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
         },
       },
     );
     console.log(response);
     return response;
   } catch (error) {
-    console.log("API request failed:", error);
-    throw new Error("Failed to fetch data from the API");
+    throw new Error("Failed to fetch data from the API", error);
   }
 }
 
