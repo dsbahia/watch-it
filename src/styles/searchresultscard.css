@@ -1,0 +1,15 @@
+.search-results-card {
+    padding: 0.5rem;
+    margin-top: 20px;
+    background-color:#00adb5;
+    margin-left: 30px;
+    margin-right: 30px;
+    border-radius: 3.5px;
+}
+
+.search-results-card > .item {
+    display: inline-block;
+    width: 33.33%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}

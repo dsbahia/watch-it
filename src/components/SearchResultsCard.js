@@ -1,19 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import SearchCard from "./SearchCard";
 import "../styles/searchresultscard.css";
 
-function SearchResultsCard() {
-  const initialState = {
-    searchResults: [],
-  };
+function SearchResultsCard({ results }) {
+  if (!results || results.length === 0) {
+    return <p>No Results</p>;
+  }
 
-  const [searchResults, setSearchResults] = useState(
-    initialState.searchResults,
+  return (
+    <div className="search-results-card">
+      {results.map((data) => (
+        <div key={data.id} className="item">
+          <SearchCard
+            title={data.original_title}
+            posterpath={data.poster_path}
+            overview={data.overview}
+            key={data.id}
+          />
+        </div>
+      ))}
+    </div>
   );
-
-  useEffect(() => {
-    
-  }, [])
-  return <div>SearchResultsCard</div>;
 }
 
 export default SearchResultsCard;
