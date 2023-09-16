@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <Toaster />
-
+      <NavBar />
       <Routes>
         <Route path="/" element={UpComing} />
         <Route path="trending" element={Trending} />
