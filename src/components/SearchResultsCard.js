@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { toast } from "react-hot-toast";
 import SearchCard from "./SearchCard";
 import "../styles/searchresultscard.css";
 
 function SearchResultsCard({ results }) {
+  useEffect(() => {
+    if (results && results.length === 0) {
+      const noResultsMsg = "No Results Found";
+
+      toast.error(noResultsMsg, {
+        duration: 5000,
+      });
+    }
+  }, [results]);
+
   if (!results || results.length === 0) {
-    return <p>No Results</p>;
+    return null;
   }
 
   return (
