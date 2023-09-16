@@ -3,7 +3,7 @@ import axios from "axios";
 async function searchMovies(query) {
   try {
     const response = await axios.get(
-      "https://api.themoviedb.org/3/search/movie",
+      "https://api.themoviedb.org/3/search/movie?language=en-GB&region=GB",
       {
         params: {
           query,
@@ -13,10 +13,9 @@ async function searchMovies(query) {
         },
       },
     );
-    console.log(response);
-    return response;
+    return response.data;
   } catch (error) {
-    throw new Error("Failed to fetch data from the API", error);
+    return null;
   }
 }
 
