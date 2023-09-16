@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "react-hot-toast";
 import searchMovies from "../api/api";
 import "../styles/searchbar.css";
 
@@ -7,8 +8,24 @@ function SearchBar({ setSearchResults }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setSearchResults(await searchMovies(value));
-    console.log(value);
+
+    if (value.trim() === "") {
+      const errorMsg = "Please enter a valid search term.";
+      toast.error(errorMsg, {
+        duration: 5000,
+      });
+      return;
+    }
+
+    const data = await searchMovies(value);
+    if (data === null) {
+      const errorMsg = "An error occurred. Please try again later.";
+      toast.error(errorMsg, {
+        duration: 5000,
+      });
+    } else {
+      setSearchResults(data);
+    }
   };
 
   return (
