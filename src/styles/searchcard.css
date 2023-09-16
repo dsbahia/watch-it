@@ -1,36 +1,48 @@
+/* styles/searchcard.css */
 .search-card {
-    background-color:#393E46;
-    color: #EEEE;
-    
-    border-radius: 3.5px;
-}
-
-/*/.poster-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
     margin: 10px;
-    padding-top: 10px;
-    height: 40px;
-    width: 20px;
-}/*/
-
-.overview-card {
-    background-color: #EEEE;
-    color: #393E46;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 3.5px;
-}
-
-.more-details > a {
-    color: #EEEE;
-    text-decoration: none;
-}
-
- .more-details > a:hover{
-    text-decoration: underline;
-}
-
-.poster-img {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex; /* Use Flexbox to arrange child items */
+    flex-direction: column; /* Arrange child items vertically */
+  }
+  
+  .poster-card {
+    flex: 0 0 auto; /* Don't allow the image to grow or shrink */
+    margin-bottom: 10px;
+  }
+  
+  .poster-img {
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+    height: auto; /* Maintain the aspect ratio */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .title-card {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .overview-card {
+    font-size: 14px;
+    flex-grow: 1; /* Allow the overview to grow and fill available space */
+  }
+  
+  .more-details {
     margin-top: 10px;
-    border-radius: 3.5px;
-}
-
+    text-align: right;
+  }
+  
+  .more-details-link {
+    text-decoration: none;
+    color: #00adb5;
+  }
+  
+  .icon {
+    margin-left: 5px; /* Add spacing between text and icon */
+    font-size: 1rem; /* Adjust the size of the icon */
+    color: #00ADB5; /* Set the icon color */
+  }

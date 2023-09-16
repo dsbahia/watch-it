@@ -1,6 +1,8 @@
 import React from "react";
 import "../styles/searchcard.css";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 
 function SearchCard({ title, posterpath, overview }) {
   return (
@@ -10,7 +12,7 @@ function SearchCard({ title, posterpath, overview }) {
         <img
           className="poster-img"
           alt={`${title} Movie poster`}
-          src={`https://image.tmdb.org/t/p/w92/${posterpath}`}
+          src={`https://image.tmdb.org/t/p/original/${posterpath}`}
         />
       </div>
       <div className="title-card">{title}</div>
@@ -18,6 +20,7 @@ function SearchCard({ title, posterpath, overview }) {
       <div className="more-details">
         <Link className="more-details-link" to="/">
           More Details
+          <FontAwesomeIcon icon={faInfoCircle} className="icon" />
         </Link>
       </div>
     </div>
