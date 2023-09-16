@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchCard renders  correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="search-card"
+  >
+    <div
+      class="poster-card"
+    >
+       
+      <img
+        alt="guardians of the galaxy Movie poster"
+        class="poster-img"
+        src="https://image.tmdb.org/t/p/w92/https://image.tmdb.org/t/p/w92//r2J02Z2OpNTctfOSN1Ydgii51I3.jpg"
+      />
+    </div>
+    <div
+      class="title-card"
+    >
+      guardians of the galaxy
+    </div>
+    <div
+      class="overview-card"
+    >
+      Peter Quill, still reeling from the loss of Gamora
+    </div>
+    <div
+      class="more-details"
+    >
+      <a
+        class="more-details-link"
+        href="/"
+      >
+        More Details
+      </a>
+    </div>
+  </div>
+  ,
+</DocumentFragment>
+`;
