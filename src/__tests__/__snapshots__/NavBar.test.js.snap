@@ -16,7 +16,7 @@ exports[`NavBar renders correctly 1`] = `
     </a>
     <a
       class="item-trending"
-      href="/trending"
+      href="/"
     >
       Trending
     </a>

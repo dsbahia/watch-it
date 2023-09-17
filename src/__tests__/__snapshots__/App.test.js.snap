@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Renders Correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="App"
+  >
+    <div
+      style="position: fixed; z-index: 9999; top: 16px; left: 16px; right: 16px; bottom: 16px; pointer-events: none;"
+    />
+    <div
+      class="navbar"
+    >
+      <div
+        class="navbar-links-item"
+      />
+      <a
+        class="item-upcoming"
+        href="/"
+      >
+        Upcoming
+      </a>
+      <a
+        class="item-trending"
+        href="/"
+      >
+        Trending
+      </a>
+    </div>
+    <img
+      alt="Watch It Logo"
+      class="watch-it-logo"
+      src="watch-it.png"
+    />
+    <div
+      class="search-bar"
+    >
+      <form
+        class="search-form"
+      >
+        <input
+          class="search-input"
+          data-testid="search-input"
+          placeholder="Search"
+          type="text"
+        />
+        <button
+          class="search-button"
+          type="submit"
+        >
+          Go!
+        </button>
+      </form>
+    </div>
+  </div>
+</DocumentFragment>
+`;
