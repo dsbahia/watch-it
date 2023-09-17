@@ -1,0 +1,29 @@
+footer {
+  background-color: #00adb5;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  padding: 20px;
+  text-align: center;
+  height: 20px;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-logo img {
+  width: 100px;
+  height: 15px;
+}
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 30px;
+}
+.tmdb-info {
+  margin-top: 0;
+  font-size: 16px;
+}
