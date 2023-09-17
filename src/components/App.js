@@ -7,6 +7,7 @@ import UpComing from "./UpComing";
 import Trending from "./Trending";
 import watchItLogo from "../images/watch-it.png";
 import SearchResultsCard from "./SearchResultsCard";
+import Footer from "./Footer";
 import "../styles/App.css";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       <img className="watch-it-logo" src={watchItLogo} alt="Watch It Logo" />
       <SearchBar setSearchResults={setSearchResults} />
       <SearchResultsCard results={searchResults.results} />
+      <Footer />
     </div>
   );
 }
