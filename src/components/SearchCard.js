@@ -3,7 +3,7 @@ import "../styles/searchcard.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
-import NoImagePlaceholder from "../images/No-Image-Placeholder.svg.png";
+import NoImagePlaceholder from "../images/No-Image-Placeholder.png";
 
 function SearchCard({ title, posterpath, overview }) {
   const posterCheck = () => {
