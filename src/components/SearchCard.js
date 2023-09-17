@@ -6,28 +6,13 @@ import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import NoImagePlaceholder from "../images/No-Image-Placeholder.svg.png";
 
 function SearchCard({ title, posterpath, overview }) {
-  if (posterpath === null) {
-    return (
-      <div className="search-card">
-        <div className="poster-card">
-          {" "}
-          <img
-            className="poster-img"
-            alt={`${title} Movie poster`}
-            src={NoImagePlaceholder}
-          />
-        </div>
-        <div className="title-card-">{title}</div>
-        <div className="overview-card">{overview}</div>
-        <div className="more-details">
-          <Link className="more-details-link" to="/">
-            More Details
-            <FontAwesomeIcon icon={faInfoCircle} className="icon" />
-          </Link>
-        </div>
-      </div>
-    );
-  }
+  const posterCheck = () => {
+    if (posterpath === null) {
+      return NoImagePlaceholder;
+    }
+    return `https://image.tmdb.org/t/p/original/${posterpath}`;
+  };
+
   return (
     <div className="search-card">
       <div className="poster-card">
@@ -35,7 +20,7 @@ function SearchCard({ title, posterpath, overview }) {
         <img
           className="poster-img"
           alt={`${title} Movie poster`}
-          src={`https://image.tmdb.org/t/p/original/${posterpath}`}
+          src={posterCheck()}
         />
       </div>
       <div className="title-card">{title}</div>
