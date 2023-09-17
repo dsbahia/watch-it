@@ -1,4 +1,5 @@
 import React from "react";
+import databaseLogo from "../images/TMDB icon.jpeg";
 import "../styles/footer.css";
 
 function Footer() {
@@ -6,7 +7,7 @@ function Footer() {
     <footer>
       <div className="footer-content">
         <div className="footer-logo">
-          <img src="../images/TMDB.jpg" alt="TMDB logo" />
+          <img src={databaseLogo} alt="TMDB logo" />
         </div>
         <div className="footer-links">
           <a href="https://www.themoviedb.org/about">About TMDB</a>
@@ -14,7 +15,7 @@ function Footer() {
           <a href="https://github.com/dsbahia/watch-it">Developers Github</a>
         </div>
       </div>
-      <p className="TMDB-info">Thank you to The Movie Database for the API</p>
+      <p className="tmdb-info">Thank you to The Movie Database for the API</p>
     </footer>
   );
 }
