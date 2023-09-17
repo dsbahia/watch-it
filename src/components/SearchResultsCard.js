@@ -19,7 +19,7 @@ function SearchResultsCard({ results }) {
   }
 
   return (
-    <div className="search-results-card">
+    <div className="search-results-card" data-testid="search-results-card">
       {results.map((data) => (
         <div key={data.id} className="item">
           <SearchCard
