@@ -18,8 +18,8 @@ function App() {
       <Toaster />
       <NavBar />
       <Routes>
-        <Route path="/" element={UpComing} />
-        <Route path="trending" element={Trending} />
+        <Route path="/" element={<UpComing />} />
+        <Route path="trending" element={<Trending />} />
       </Routes>
       <img className="watch-it-logo" src={watchItLogo} alt="Watch It Logo" />
       <SearchBar setSearchResults={setSearchResults} />
