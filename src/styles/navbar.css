@@ -1,27 +1,34 @@
 .navbar {
-  background-color: #00adb5;
+  background-color: #00ADB5;
   display: flex;
-  position: fixed;
-  width: 100%;
-  height: 100px;
-  margin: 0px;
+  align-items: center;
+  justify-content: right;
+  padding: 0 20px;
+  height: 75px;
 }
-
+.navbar-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
 .navbar-links-item {
-  margin: 300px;
-  padding: 30px;
+  font-size: 16px;
+  color: #EEEEEE;
+  text-decoration: none;
 }
 .item-upcoming {
-  font-size: 30px;
-  color: #eeeeee;
-  margin-left: 700px;
+  font-weight: bold;
+  color: #FFFFFF;
   text-decoration: none;
-  margin-top: 40px;
+  margin-right: 20px;
 }
 .item-trending {
-  font-size: 30px;
-  color: #eeeeee;
-  margin-left: 140px;
+  font-weight: bold;
+  color: #FFFFFF;
   text-decoration: none;
-  margin-top: 40px;
+  margin-right: 20px;
+}
+.navbar-links-item:not(:last-child) {
+  margin-right: 20px;
 }
