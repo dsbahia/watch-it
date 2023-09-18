@@ -1,45 +1,46 @@
 /* Styles for the search results container using Flexbox */
 .search-results-card {
-    display: flex; /* Use Flexbox to arrange child items */
-    flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
-    justify-content: space-between;
-    align-items: flex-start; /* Align the child items to the top vertically */
+  display: flex; /* Use Flexbox to arrange child items */
+  flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+  justify-content: space-between;
+  align-items: flex-start; /* Align the child items to the top vertically */
+  min-height: 100vh;
+}
 
-  }
-  
-  /* Styles for individual search cards using Flexbox */
-  .search-card {
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 10px; /* Add margin to space out the cards */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; 
-  }
-  
-  .item {
-    width: calc(33.33% - 10px); /* Adjust the width as needed for 3 cards per row */
-    margin-bottom: 20px; /* Adjust spacing between rows as needed */
-    box-sizing: border-box;
-  }
-  
-  /* Additional styles for specific card elements if needed */
-  .title-card {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .overview-card {
-    font-size: 14px;
-    flex-grow: 1; /* Allow the overview to grow and fill available space */
-  }
-  
-  /* Style for the "More Details" link */
-  .more-details-link {
-    text-decoration: none;
-    color: #00ADB5;
-  }
-  
+/* Styles for individual search cards using Flexbox */
+.search-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px; /* Add margin to space out the cards */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.item {
+  width: calc(
+    33.33% - 10px
+  ); /* Adjust the width as needed for 3 cards per row */
+  margin-bottom: 20px; /* Adjust spacing between rows as needed */
+  box-sizing: border-box;
+}
+
+/* Additional styles for specific card elements if needed */
+.title-card {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.overview-card {
+  font-size: 14px;
+  flex-grow: 1; /* Allow the overview to grow and fill available space */
+}
+
+/* Style for the "More Details" link */
+.more-details-link {
+  text-decoration: none;
+  color: #00adb5;
+}

@@ -1,22 +1,24 @@
 import React from "react";
-import databaseLogo from "../images/TMDB icon.jpeg";
 import "../styles/footer.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import tmdbLogo from "../images/tmdb-footer-icon.png";
 
 function Footer() {
   return (
     <footer>
       <div className="footer-content">
         <div className="footer-logo">
-          <img src={databaseLogo} alt="TMDB logo" />
+          <img src={tmdbLogo} alt="TMDB logo" />
         </div>
         <div className="footer-links">
-          <a href="https://www.themoviedb.org/about">About TMDB</a>
-          <a href="https://developer.themoviedb.org/docs">Getting started</a>
-          <a href="https://github.com/dsbahia/watch-it">Design Team Github</a>
+          <a href="https://github.com/dsbahia/watch-it">
+            Design Team Github <FontAwesomeIcon icon={faGithub} />{" "}
+          </a>
         </div>
       </div>
       <p className="tmdb-info">
-        Acknowledgements to The Movie Database for the use of the API
+        This product uses the TMDB API but is not endorsed or certified by TMDB.
       </p>
       <p className="team-info">
         Design Team: Dal Bahia, Max Staite and Jonathan Thompson
