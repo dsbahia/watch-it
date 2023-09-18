@@ -4,8 +4,7 @@ footer {
   position: fixed;
   bottom: 0;
   padding: 20px;
-  text-align: center;
-  height: 20px;
+  height: 50px;
   width: 100%;
 }
 
@@ -13,17 +12,28 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: -10px;
 }
 .footer-logo img {
   width: 100px;
-  height: 15px;
+  height: 16px;
 }
 .footer-links a {
   color: #fff;
   text-decoration: none;
   margin: 0 30px;
 }
+
 .tmdb-info {
-  margin-top: 0;
-  font-size: 16px;
+  margin-right: 1100px;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #393e46;
+}
+.team-info {
+  margin-top: -40px;
+  font-size: 18px;
+}
+.footer-links a:hover {
+  color: #393e46;
 }
