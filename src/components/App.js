@@ -11,9 +11,9 @@ import watchItLogo from "../images/watch-it.png";
 function App() {
   return (
     <div className="App">
+      <NavBar />
       <img className="watch-it-logo" src={watchItLogo} alt="Watch It Logo" />
       <SearchBar />
-      <NavBar />
       <Routes>
         <Route path="/" element={UpComing} />
         <Route path="trending" element={Trending} />
