@@ -1,0 +1,39 @@
+footer {
+  background-color: #00adb5;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  padding: 20px;
+  height: 30px;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: -10px;
+}
+.footer-logo img {
+  width: 100px;
+  height: 16px;
+}
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 30px;
+}
+
+.tmdb-info {
+  margin-right: 1100px;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #393e46;
+}
+.team-info {
+  margin-top: -40px;
+  font-size: 18px;
+}
+.footer-links a:hover {
+  color: #393e46;
+}
