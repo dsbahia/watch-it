@@ -17,5 +17,14 @@
     height: 20px;
   }
 
+  .trending-item {
+    width: calc(
+      33.33% - 10px
+    ); /* Adjust the width as needed for 3 cards per row */
+    margin-bottom: 20px; /* Adjust spacing between rows as needed */
+    box-sizing: border-box;
+    margin-top: 10px;
+  }
+
 
   
