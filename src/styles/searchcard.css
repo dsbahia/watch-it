@@ -1,22 +1,21 @@
-/* styles/searchcard.css */
 .search-card {
     background-color: #ffffff;
     border-radius: 10px;
     padding: 20px;
     margin: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex; /* Use Flexbox to arrange child items */
-    flex-direction: column; /* Arrange child items vertically */
+    display: flex; 
+    flex-direction: column; 
   }
   
   .poster-card {
-    flex: 0 0 auto; /* Don't allow the image to grow or shrink */
+    flex: 0 0 auto; 
     margin-bottom: 10px;
   }
   
   .poster-img {
-    max-width: 100%; /* Ensure the image doesn't exceed its container */
-    height: auto; /* Maintain the aspect ratio */
+    max-width: 100%; 
+    height: auto; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
   
@@ -28,7 +27,7 @@
   
   .overview-card {
     font-size: 14px;
-    flex-grow: 1; /* Allow the overview to grow and fill available space */
+    flex-grow: 1; 
   }
   
   .more-details {
@@ -42,7 +41,7 @@
   }
   
   .icon {
-    margin-left: 5px; /* Add spacing between text and icon */
-    font-size: 1rem; /* Adjust the size of the icon */
-    color: #00ADB5; /* Set the icon color */
+    margin-left: 5px;
+    font-size: 1rem; 
+    color: #00ADB5; 
   }
