@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import SearchBar from "./SearchBar";
@@ -12,17 +12,25 @@ import "../styles/App.css";
 
 function App() {
   const [searchResults, setSearchResults] = useState({});
+  const [showTrending, setShowTrending] = useState(true);
 
+  const handleSearchResults = (results) => {
+    setSearchResults(results);
+    setShowTrending(false);
+  };
+
+  useEffect(() => {
+    if (searchResults.results && searchResults.results.length === 0) {
+      setShowTrending(true);
+    }
+  }, [searchResults]);
   return (
     <div className="App">
       <Toaster />
       <NavBar />
       <img className="watch-it-logo" src={watchItLogo} alt="Watch It Logo" />
-      <SearchBar setSearchResults={setSearchResults} />{" "}
-      <Routes>
-        <Route path="/" element={<UpComing />} />
-      </Routes>
-      <TrendingMovieContainer />
+      <SearchBar setSearchResults={handleSearchResults} />{" "}
+      {showTrending && <TrendingMovieContainer />}
       <SearchResultsCard results={searchResults.results} />
       <Footer />
     </div>
