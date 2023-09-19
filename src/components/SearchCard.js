@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import NoImagePlaceholder from "../images/No-Image-Placeholder.png";
 
-function SearchCard({ title, posterpath, overview }) {
+function SearchCard({ title, posterpath }) {
   const posterCheck = () => {
     if (posterpath === null) {
       return NoImagePlaceholder;
@@ -24,7 +24,6 @@ function SearchCard({ title, posterpath, overview }) {
         />
       </div>
       <div className="title-card">{title}</div>
-      <div className="overview-card">{overview}</div>
       <div className="more-details">
         <Link className="more-details-link" to="/">
           More Details

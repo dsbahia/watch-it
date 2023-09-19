@@ -25,7 +25,6 @@ function SearchResultsCard({ results }) {
           <SearchCard
             title={data.original_title}
             posterpath={data.poster_path}
-            overview={data.overview}
             key={data.id}
           />
         </div>

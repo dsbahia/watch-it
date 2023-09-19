@@ -6,7 +6,7 @@ import "../styles/trendingmoviescontainer.css";
 
 function TrendingMovieContainer() {
   const [moviesData, setMoviesData] = useState([]);
-
+  const maxResults = 3;
   useEffect(() => {
     async function fetchTrendingMovies() {
       try {
@@ -28,8 +28,10 @@ function TrendingMovieContainer() {
       className="trending-movie-container"
       data-testid="trending-movie-container"
     >
-      <div className="trending-movie-title">Trending Movies</div>
-      {moviesData.slice(0, 6).map((data) => (
+      <div className="trending-movie-title">
+        Trending Movies In The Last Day
+      </div>
+      {moviesData.slice(0, maxResults).map((data) => (
         <div key={data.id} className="trending-item">
           <TrendingMovie
             title={data.original_title}
