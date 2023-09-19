@@ -1,32 +1,36 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import TrendingMovie from "./TrendingMovies";
-import "../styles/searchresultscard.css";
+import api from "../api/api";
+import "../styles/trendingmoviescontainer.css";
 
-function TrendingMovieContainer({ trendingResults }) {
+function TrendingMovieContainer() {
+  const [moviesData, setMoviesData] = useState([]);
+
   useEffect(() => {
-    if (trendingResults && trendingResults.length === 0) {
-      const noResultsMsg = "No Results Found";
-
-      toast.error(noResultsMsg, {
-        duration: 5000,
-      });
+    async function fetchTrendingMovies() {
+      try {
+        const data = await api.trendingMovies();
+        setMoviesData(data.results);
+      } catch (error) {
+        console.error(error);
+      }
     }
-  }, [trendingResults]);
+    fetchTrendingMovies();
+  }, []);
 
-  if (!trendingResults || trendingResults.length === 0) {
-    return null;
+  if (moviesData.length === 0) {
+    return <div>Loading...</div>;
   }
-
-  const firstTwoResults = trendingResults.slice(0, 2);
 
   return (
     <div
       className="trending-movie-container"
       data-testid="trending-movie-container"
     >
-      {firstTwoResults.map((data) => (
-        <div key={data.id} className="item">
+      <div className="trending-movie-title">Trending Movies</div>
+      {moviesData.slice(0, 6).map((data) => (
+        <div key={data.id} className="trending-item">
           <TrendingMovie
             title={data.original_title}
             posterpath={data.poster_path}

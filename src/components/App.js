@@ -12,7 +12,6 @@ import "../styles/App.css";
 
 function App() {
   const [searchResults, setSearchResults] = useState({});
-  const [trendingResults, setTrendingResults] = useState({});
 
   return (
     <div className="App">
@@ -23,7 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<UpComing />} />
       </Routes>
-      <TrendingMovieContainer trendingResults={trendingResults.results} />
+      <TrendingMovieContainer />
       <SearchResultsCard results={searchResults.results} />
       <Footer />
     </div>
