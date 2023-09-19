@@ -1,0 +1,20 @@
+.trending {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  }
+
+  .trending-poster {
+    flex: 0 0 auto; /* Don't allow the image to grow or shrink */
+    margin-bottom: 10px;
+  }
+
+  .trending-poster-img {
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+    height: auto; /* Maintain the aspect ratio */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
