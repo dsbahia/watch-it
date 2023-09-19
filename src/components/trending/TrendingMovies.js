@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
-import "../styles/trending.css";
-import NoImagePlaceholder from "../images/No-Image-Placeholder.png";
+import "../../styles/trending.css";
+import NoImagePlaceholder from "../../images/No-Image-Placeholder.png";
 
 function TrendingMovie({ posterpath, title }) {
   const posterCheck = () => {
@@ -25,7 +25,7 @@ function TrendingMovie({ posterpath, title }) {
       <div className="trending-title">{title}</div>
       <div className="more-details">
         <Link className="more-details-link" to="/">
-          See More Trending
+          See More Details
           <FontAwesomeIcon icon={faInfoCircle} className="icon" />
         </Link>
       </div>

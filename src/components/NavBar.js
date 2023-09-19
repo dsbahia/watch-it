@@ -8,11 +8,19 @@ function NavBar() {
       <div className="navbar-links-item" />
 
       <Link className="item-upcoming" to="/">
-        Upcoming
+        Register
       </Link>
 
-      <Link className="item-trending" to="/">
-        Trending
+      <Link className="item-upcoming" to="/">
+        Login
+      </Link>
+
+      <Link className="item-upcoming" to="/">
+        Movies
+      </Link>
+
+      <Link className="item-upcoming" to="/">
+        TV Shows
       </Link>
     </div>
   );

@@ -1,0 +1,12 @@
+.trending-results-container {
+    display:flex;
+    margin-top: 20px;
+}
+
+.trending-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    height: 20px;
+  }
