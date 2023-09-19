@@ -1,11 +1,9 @@
 .trending-movie-container {
-    background-color: #ffffff;
+    
     border-radius: 10px;
-    padding: 20px;
-    margin: 10px; /* Add margin to space out the cards */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
+    width: 50%;
     flex-wrap: wrap;
+    margin-top: 20px;
     justify-content: space-between;
   }
 
@@ -18,9 +16,8 @@
   }
 
   .trending-item {
-    width: calc(
-      33.33% - 10px
-    ); /* Adjust the width as needed for 3 cards per row */
+    width: calc
+      100%; /* Adjust the width as needed for 3 cards per row */
     margin-bottom: 20px; /* Adjust spacing between rows as needed */
     box-sizing: border-box;
     margin-top: 10px;
