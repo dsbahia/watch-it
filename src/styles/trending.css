@@ -4,7 +4,7 @@
     padding: 20px;
     margin: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 25%;
+  
   }
 
   .trending-poster {
@@ -16,4 +16,13 @@
     max-width: 100%; /* Ensure the image doesn't exceed its container */
     height: auto; /* Maintain the aspect ratio */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .trending-item {
+    width: calc(
+      33.33% - 10px
+    ); /* Adjust the width as needed for 3 cards per row */
+    margin-bottom: 20px; /* Adjust spacing between rows as needed */
+    box-sizing: border-box;
+    margin-top: 10px;
   }
