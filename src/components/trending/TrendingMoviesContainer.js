@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import TrendingMovie from "./TrendingMovies";
-import api from "../api/api";
-import "../styles/trendingmoviescontainer.css";
+import api from "../../api/api";
+import "../../styles/trendingmoviescontainer.css";
 
 function TrendingMovieContainer() {
   const [moviesData, setMoviesData] = useState([]);
@@ -13,7 +13,10 @@ function TrendingMovieContainer() {
         const data = await api.trendingMovies();
         setMoviesData(data.results);
       } catch (error) {
-        console.error(error);
+        const errorMsg = "An error occurred. Please try again later.";
+        toast.error(errorMsg, {
+          duration: 5000,
+        });
       }
     }
     fetchTrendingMovies();
@@ -24,10 +27,7 @@ function TrendingMovieContainer() {
   }
 
   return (
-    <div
-      className="trending-movie-container"
-      data-testid="trending-movie-container"
-    >
+    <div>
       <div className="trending-movie-title">
         Trending Movies In The Last Day
       </div>
