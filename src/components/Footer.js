@@ -13,7 +13,7 @@ function Footer() {
         </div>
         <div className="footer-links">
           <a href="https://github.com/dsbahia/watch-it">
-            Design Team Github <FontAwesomeIcon icon={faGithub} />{" "}
+            GitHub <FontAwesomeIcon icon={faGithub} />{" "}
           </a>
         </div>
       </div>
@@ -21,7 +21,7 @@ function Footer() {
         This product uses the TMDB API but is not endorsed or certified by TMDB.
       </p>
       <p className="team-info">
-        Design Team: Dal Bahia, Max Staite and Jonathan Thompson
+        Contributors: Dal Bahia, Max Staite and Jonathan Thompson
       </p>
     </footer>
   );
