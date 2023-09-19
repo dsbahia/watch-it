@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
-import searchMovies from "../api/api";
+import api from "../api/api";
 import "../styles/searchbar.css";
 
 function SearchBar({ setSearchResults }) {
@@ -17,7 +17,7 @@ function SearchBar({ setSearchResults }) {
       return;
     }
 
-    const data = await searchMovies(value);
+    const data = await api.searchMovies(value);
     if (data === null) {
       const errorMsg = "An error occurred. Please try again later.";
       toast.error(errorMsg, {
