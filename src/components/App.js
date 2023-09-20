@@ -7,6 +7,7 @@ import SearchResultsCard from "./SearchResultsCard";
 import Footer from "./Footer";
 import "../styles/App.css";
 import displayTrending from "./trending/Trending";
+import UserWindow from "./UserWindow";
 
 function App() {
   const [searchResults, setSearchResults] = useState({});
@@ -24,6 +25,7 @@ function App() {
   }, [searchResults]);
   return (
     <div className="App">
+      <UserWindow />
       <Toaster />
       <NavBar />
       <img className="watch-it-logo" src={watchItLogo} alt="Watch It Logo" />
