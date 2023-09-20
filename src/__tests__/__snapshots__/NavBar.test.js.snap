@@ -12,13 +12,25 @@ exports[`NavBar renders correctly 1`] = `
       class="item-upcoming"
       href="/"
     >
-      Upcoming
+      Register
     </a>
     <a
-      class="item-trending"
+      class="item-upcoming"
       href="/"
     >
-      Trending
+      Login
+    </a>
+    <a
+      class="item-upcoming"
+      href="/"
+    >
+      Movies
+    </a>
+    <a
+      class="item-upcoming"
+      href="/"
+    >
+      TV Shows
     </a>
   </div>
 </DocumentFragment>

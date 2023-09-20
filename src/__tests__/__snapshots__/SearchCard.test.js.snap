@@ -21,11 +21,6 @@ exports[`SearchCard renders correctly 1`] = `
       Guardians of the Galaxy
     </div>
     <div
-      class="overview-card"
-    >
-      Peter Quill, still reeling from the loss of Gamora
-    </div>
-    <div
       class="more-details"
     >
       <a

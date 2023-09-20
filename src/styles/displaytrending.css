@@ -1,12 +1,16 @@
 .trending-results-container {
-    display:flex;
-    margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 20px;
 }
 
 .trending-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-align: center;
-    height: 20px;
-  }
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  height: 20px;
+}
