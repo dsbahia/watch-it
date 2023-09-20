@@ -19,17 +19,5 @@ function UserWindow() {
       window.removeEventListener("resize", setDimension);
     };
   }, [screenSize]);
-  return (
-    <div>
-      <ul>
-        <li>
-          Width: <strong>{screenSize.dynamicWidth}</strong>
-        </li>
-        <li>
-          Height: <strong>{screenSize.dynamicHeight}</strong>
-        </li>
-      </ul>
-    </div>
-  );
 }
 export default UserWindow;
