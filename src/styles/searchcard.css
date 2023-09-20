@@ -1,47 +1,36 @@
 .search-card {
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex; 
-    flex-direction: column; 
-  }
-  
-  .poster-card {
-    flex: 0 0 auto; 
-    margin-bottom: 10px;
-  }
-  
-  .poster-img {
-    max-width: 100%; 
-    height: auto; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  
-  .title-card {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .overview-card {
-    font-size: 14px;
-    flex-grow: 1; 
-  }
-  
-  .more-details {
-    margin-top: 10px;
-    text-align: right;
-  }
-  
-  .more-details-link {
-    text-decoration: none;
-    color: #00adb5;
-  }
-  
-  .icon {
-    margin-left: 5px;
-    font-size: 1rem; 
-    color: #00ADB5; 
-  }
+  flex-direction: column;
+}
+
+.poster-card {
+  flex: 0 0 auto;
+  margin-bottom: 10px;
+}
+
+.poster-img {
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.title-card {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.more-details {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.more-details-link {
+  text-decoration: none;
+  color: #00adb5;
+}
+
+.icon {
+  margin-left: 5px;
+  font-size: 1rem;
+  color: #00adb5;
+}
