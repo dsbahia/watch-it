@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { toast } from "react-hot-toast";
 import TrendingTVShows from "./TrendingTVShows";
 import api from "../../api/api";
 import "../../styles/trendingtvshowscontainer.css";
 
-function TrendingTVContainer() {
+function TrendingTVShowsContainer() {
   const [tvData, setTvData] = useState([]);
-  const maxResults = 3;
+  const [maxResults, setMaxResults] = useState(3);
+
   useEffect(() => {
     async function fetchTrendingTVShows() {
       try {
@@ -22,9 +25,9 @@ function TrendingTVContainer() {
     fetchTrendingTVShows();
   }, []);
 
-  if (tvData.length === 0) {
-    return <div>Loading...</div>;
-  }
+  const handleShowMore = () => {
+    setMaxResults(maxResults + 3);
+  };
 
   return (
     <div>
@@ -38,8 +41,21 @@ function TrendingTVContainer() {
           />
         </div>
       ))}
+      {maxResults < tvData.length && ( // Display "Show More" button if there are more items
+        <button
+          type="button"
+          className="show-more-button"
+          onClick={handleShowMore}
+        >
+          <FontAwesomeIcon
+            icon={faCircleChevronDown}
+            size="2xl"
+            style={{ color: "#393E46" }}
+          />
+        </button>
+      )}
     </div>
   );
 }
 
-export default TrendingTVContainer;
+export default TrendingTVShowsContainer;
