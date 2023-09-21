@@ -36,7 +36,7 @@ function TrendingMovieContainer() {
           <TrendingMovie
             title={data.original_title}
             posterpath={data.poster_path}
-            key={data.id}
+            movieId={data.id}
           />
         </div>
       ))}

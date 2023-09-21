@@ -1,11 +1,18 @@
-import React from "react";
-import "../styles/searchcard.css";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import "../../styles/searchcard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
-import NoImagePlaceholder from "../images/No-Image-Placeholder.png";
+import MoreDetails from "../MoreDetails";
+import NoImagePlaceholder from "../../images/No-Image-Placeholder.png";
 
-function SearchCard({ title, posterpath }) {
+function SearchCard({ title, posterpath, movieId }) {
+  const [isShown, setIsShown] = useState(false);
+  const movie = "movie";
+
+  const handleClick = () => {
+    setIsShown((current) => !current);
+  };
+
   const posterCheck = () => {
     if (posterpath === null) {
       return NoImagePlaceholder;
@@ -25,10 +32,15 @@ function SearchCard({ title, posterpath }) {
       </div>
       <div className="title-card">{title}</div>
       <div className="more-details">
-        <Link className="more-details-link" to="/">
+        <button
+          className="more-details-link"
+          type="button"
+          onClick={handleClick}
+        >
           More Details
           <FontAwesomeIcon icon={faInfoCircle} className="icon" />
-        </Link>
+        </button>
+        {isShown ? <MoreDetails type={movie} id={movieId} /> : null}
       </div>
     </div>
   );
