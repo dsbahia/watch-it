@@ -72,14 +72,22 @@ exports[`App Renders Correctly 1`] = `
         class="trending-results-container-movies"
       >
         <div>
-          Loading...
+          <div
+            class="trending-movie-title"
+          >
+            Trending Movies In The Last Day
+          </div>
         </div>
       </div>
       <div
         class="trending-results-container-tv-shows"
       >
         <div>
-          Loading...
+          <div
+            class="trending-tv-title"
+          >
+            Trending TV Shows In The Last Day
+          </div>
         </div>
       </div>
     </div>
