@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Toaster } from "react-hot-toast";
-import SearchBar from "./SearchBar";
+import SearchBar from "./Search/SearchBar";
 import NavBar from "./NavBar";
 import watchItLogo from "../images/watch-it.png";
-import SearchResultsCard from "./SearchResultsCard";
+import SearchResultsCard from "./Search/SearchResultsCard";
 import Footer from "./Footer";
 import "../styles/App.css";
 import displayTrending from "./trending/Trending";
