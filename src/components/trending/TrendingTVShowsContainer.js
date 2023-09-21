@@ -41,7 +41,7 @@ function TrendingTVShowsContainer() {
           />
         </div>
       ))}
-      {maxResults < tvData.length && ( // Display "Show More" button if there are more items
+      {maxResults < tvData.length && (
         <button
           type="button"
           className="show-more-button"

@@ -1,79 +1,52 @@
 import axios from "axios";
 
-async function searchMovies(query) {
+async function makeRequest(url, params) {
   try {
-    const response = await axios.get(
-      "https://api.themoviedb.org/3/search/movie?language=en-GB&region=GB",
-      {
-        params: {
-          query,
-        },
-        headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
-        },
+    const response = await axios.get(url, {
+      params,
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
       },
-    );
+    });
     return response.data;
   } catch (error) {
     return null;
   }
+}
+
+async function searchMovies(query) {
+  const apiUrl = "https://api.themoviedb.org/3/search/movie";
+  const params = {
+    query,
+    language: "en-GB",
+    region: "GB",
+  };
+  return makeRequest(apiUrl, params);
 }
 
 async function trendingMovies() {
-  try {
-    const response = await axios.get(
-      "https://api.themoviedb.org/3/trending/movie/day",
-      {
-        params: {
-          language: "en-GB",
-        },
-        headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
-        },
-      },
-    );
-    return response.data;
-  } catch (error) {
-    return null;
-  }
+  const apiUrl = "https://api.themoviedb.org/3/trending/movie/day";
+  const params = {
+    language: "en-GB",
+  };
+  return makeRequest(apiUrl, params);
 }
 
 async function trendingTVShows() {
-  try {
-    const response = await axios.get(
-      "https://api.themoviedb.org/3/trending/tv/day",
-      {
-        params: {
-          language: "en-GB",
-        },
-        headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
-        },
-      },
-    );
-    return response.data;
-  } catch (error) {
-    return null;
-  }
+  const apiUrl = "https://api.themoviedb.org/3/trending/tv/day";
+  const params = {
+    language: "en-GB",
+  };
+  return makeRequest(apiUrl, params);
 }
 
 async function searchMovieById(type, id) {
-  try {
-    const response = await axios.get(
-      `https://api.themoviedb.org/3/${type}/${id}`,
-      {
-        headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
-        },
-      },
-    );
-    return response.data;
-  } catch (error) {
-    return null;
-  }
+  const apiUrl = `https://api.themoviedb.org/3/${type}/${id}`;
+  return makeRequest(apiUrl);
 }
 
 export default {
+  makeRequest,
   searchMovies,
   trendingMovies,
   trendingTVShows,

@@ -8,7 +8,7 @@ import "../../styles/trendingmoviescontainer.css";
 
 function TrendingMoviesContainer() {
   const [moviesData, setMoviesData] = useState([]);
-  const [maxResults, setMaxResults] = useState(3); // Initialize maxResults with 3
+  const [maxResults, setMaxResults] = useState(3);
 
   useEffect(() => {
     async function fetchTrendingMovies() {
@@ -26,7 +26,7 @@ function TrendingMoviesContainer() {
   }, []);
 
   const handleShowMore = () => {
-    setMaxResults(maxResults + 3); // Increase maxResults by 3 when the button is clicked
+    setMaxResults(maxResults + 3);
   };
 
   return (
@@ -43,7 +43,7 @@ function TrendingMoviesContainer() {
           />
         </div>
       ))}
-      {maxResults < moviesData.length && ( // Display "Show More" button if there are more items
+      {maxResults < moviesData.length && (
         <button
           type="button"
           className="show-more-button"
