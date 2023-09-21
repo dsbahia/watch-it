@@ -57,4 +57,25 @@ async function trendingTVShows() {
   }
 }
 
-export default { searchMovies, trendingMovies, trendingTVShows };
+async function searchMovieById(type, id) {
+  try {
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/${type}/${id}`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
+        },
+      },
+    );
+    return response.data;
+  } catch (error) {
+    return null;
+  }
+}
+
+export default {
+  searchMovies,
+  trendingMovies,
+  trendingTVShows,
+  searchMovieById,
+};

@@ -34,7 +34,7 @@ function TrendingTVContainer() {
           <TrendingTVShows
             title={data.original_name}
             posterpath={data.poster_path}
-            key={data.id}
+            tvId={data.id}
           />
         </div>
       ))}
