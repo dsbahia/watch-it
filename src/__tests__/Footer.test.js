@@ -15,22 +15,37 @@ describe("Footer", () => {
   });
 
   it("renders the correct TMDB acknowledgemnt statement", () => {
+    render(
+      <MemoryRouter>
+        <Footer />
+      </MemoryRouter>,
+    );
     const statement = screen.getByText(
-      "This product uses the TMDB API but is not endorsed or certified by TMDB",
+      "This product uses the TMDB API but is not endorsed or certified by TMDB.",
     );
 
     expect(statement).toBeInTheDocument();
   });
 
   it("displays TMDB Logo", async () => {
-    const correctLogo = getByText("TMDB logo");
+    render(
+      <MemoryRouter>
+        <Footer />
+      </MemoryRouter>,
+    );
+    const correctLogo = screen.getByAltText("TMDB logo");
 
     expect(correctLogo).toBeInTheDocument();
     expect(correctLogo.src).toContain(logo);
   });
 
   it("renders the github link with the correct route", () => {
-    const anchorTag = getByText("GitHub");
+    render(
+      <MemoryRouter>
+        <Footer />
+      </MemoryRouter>,
+    );
+    const anchorTag = screen.getByText("GitHub");
 
     expect(anchorTag).toBeInTheDocument();
     expect(anchorTag).toHaveAttribute(
