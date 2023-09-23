@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Toaster } from "react-hot-toast";
-import SearchBar from "./SearchBar";
 import NavBar from "./NavBar";
 import watchItLogo from "../images/watch-it.png";
-import SearchResultsCard from "./SearchResultsCard";
+import SearchBar from "./Search/SearchBar";
+import SearchResultsCard from "./Search/SearchResultsCard";
+import displayTrending from "./trending/Trending";
 import Footer from "./Footer";
 import "../styles/App.css";
-import displayTrending from "./trending/Trending";
 
 function App() {
   const [searchResults, setSearchResults] = useState({});
