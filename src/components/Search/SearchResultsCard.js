@@ -26,6 +26,7 @@ function SearchResultsCard({ results }) {
             title={data.original_title}
             posterpath={data.poster_path}
             movieId={data.id}
+            overview={data.overview}
           />
         </div>
       ))}

@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import MovieDropDown from "./DropDowns/MovieDropDown";
+import TvDropDown from "./DropDowns/TvDropDown";
 import "../styles/navbar.css";
 
 function NavBar() {
@@ -15,13 +17,8 @@ function NavBar() {
         Login
       </Link>
 
-      <Link className="item-upcoming" to="/">
-        Movies
-      </Link>
-
-      <Link className="item-upcoming" to="/">
-        TV Shows
-      </Link>
+      <MovieDropDown />
+      <TvDropDown />
     </div>
   );
 }
