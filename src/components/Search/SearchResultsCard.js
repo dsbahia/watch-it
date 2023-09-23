@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { toast } from "react-hot-toast";
 import SearchCard from "./SearchCard";
-import "../styles/searchresultscard.css";
+import "../../styles/searchresultscard.css";
 
 function SearchResultsCard({ results }) {
   useEffect(() => {
@@ -25,7 +25,7 @@ function SearchResultsCard({ results }) {
           <SearchCard
             title={data.original_title}
             posterpath={data.poster_path}
-            key={data.id}
+            movieId={data.id}
           />
         </div>
       ))}

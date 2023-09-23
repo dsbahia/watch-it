@@ -23,9 +23,9 @@ exports[`SearchCard renders correctly 1`] = `
     <div
       class="more-details"
     >
-      <a
+      <button
         class="more-details-link"
-        href="/"
+        type="button"
       >
         More Details
         <svg
@@ -43,7 +43,7 @@ exports[`SearchCard renders correctly 1`] = `
             fill="currentColor"
           />
         </svg>
-      </a>
+      </button>
     </div>
   </div>
 </DocumentFragment>

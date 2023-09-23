@@ -1,6 +1,6 @@
 import React from "react";
 import { fireEvent, render } from "@testing-library/react";
-import SearchBar from "../components/SearchBar";
+import SearchBar from "../components/Search/SearchBar";
 
 describe("SearchBar", () => {
   const { asFragment } = render(<SearchBar />);
