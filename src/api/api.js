@@ -47,7 +47,9 @@ async function searchMovieById(type, id) {
 
 async function topRatedMovies() {
   const apiUrl = "https://api.themoviedb.org/3/movie/top_rated";
-  const params = {};
+  const params = {
+    language: "en-GB",
+  };
   return makeRequest(apiUrl, params);
 }
 

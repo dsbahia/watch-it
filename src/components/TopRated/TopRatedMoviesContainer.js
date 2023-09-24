@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleChevronDown } from "@fortawesome/free-solid-svg-icons";
 import TopRatedMovies from "./TopRatedMovies";
 import api from "../../api/api";
+import "../../styles/topratedmoviescontainer.css";
 
 function TopRatedMoviesContainer() {
   const [moviesData, setMoviesData] = useState([]);
@@ -29,7 +30,7 @@ function TopRatedMoviesContainer() {
     setMaxResults(maxResults + 3);
   };
   return (
-    <div>
+    <div className="top-rated-container">
       <div className="top-rated-movie-title">Top Rated Movies</div>
       {moviesData.slice(0, maxResults).map((data) => (
         <div key={data.id} className="top-rated-item">
