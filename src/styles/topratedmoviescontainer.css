@@ -1,16 +1,18 @@
 .top-rated-container {
-    width: 75%;
-    display: flex;
+  width: 75%;
+  display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 1200px;
   margin: auto;
   margin-top: 20px;
+  
 }
 
 .top-rated {
     margin-top: 5px;
     padding: 0px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .top-rated-movie-title {
     font-size: 18px;
@@ -21,10 +23,11 @@
   }
   
   .top-rated-item {
-    width: calc 100%; 
+    width: 95%; 
     margin-bottom: 20px; 
     box-sizing: border-box;
     margin-top: 5px;
+
   }
 
   .top-rated-title {

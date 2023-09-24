@@ -15,7 +15,6 @@ function TopRatedMoviesContainer() {
       try {
         const data = await api.topRatedMovies();
         setMoviesData(data.results);
-        console.log(data.results);
       } catch (error) {
         const errorMsg = "An error occurred. Please try again later.";
         toast.error(errorMsg, {
