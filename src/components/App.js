@@ -13,15 +13,18 @@ import "../styles/App.css";
 function App() {
   const [searchResults, setSearchResults] = useState({});
   const [showTrending, setShowTrending] = useState(true);
+  const [showTopRated, setShowTopRated] = useState(true);
 
   const handleSearchResults = (results) => {
     setSearchResults(results);
     setShowTrending(false);
+    setShowTopRated(false);
   };
 
   useEffect(() => {
     if (searchResults.results && searchResults.results.length === 0) {
       setShowTrending(true);
+      setShowTopRated(true);
     }
   }, [searchResults]);
   return (
@@ -31,10 +34,16 @@ function App() {
       <img className="watch-it-logo" src={watchItLogo} alt="Watch It Logo" />
       <SearchBar setSearchResults={handleSearchResults} />{" "}
       <Routes>
-        <Route path="/top-rated-movies" element={<TopRatedMoviesContainer />} />
-        <Route path="/" element={showTrending && displayTrending()} />
+        <Route
+          path="/top-rated-movies"
+          element={showTopRated && <TopRatedMoviesContainer />}
+        />
+        <Route path="/" element={displayTrending()} />
+        <Route
+          path="/search"
+          element={<SearchResultsCard results={searchResults.results} />}
+        />
       </Routes>
-      <SearchResultsCard results={searchResults.results} />
       <Footer />
     </div>
   );
