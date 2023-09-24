@@ -3,9 +3,6 @@ import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 
 function MovieDropDown() {
-  const TopRatedHandleClick = () => {};
-  const UpcomingHandleClick = () => {};
-
   return (
     <DropdownButton
       id="movie-dropdown"
@@ -13,13 +10,11 @@ function MovieDropDown() {
       drop="down-centered"
       autoClose="inside"
       data-bs-theme="dark"
+      variant="secondary"
+      class="bg-transparent"
     >
-      <Dropdown.Item onClick={TopRatedHandleClick} href="/top-rated-movies">
-        Top Rated
-      </Dropdown.Item>
-      <Dropdown.Item onClick={UpcomingHandleClick} href="/upcoming-movies">
-        Upcoming
-      </Dropdown.Item>
+      <Dropdown.Item href="/top-rated-movies">Top Rated</Dropdown.Item>
+      <Dropdown.Item href="/upcoming-movies">Upcoming</Dropdown.Item>
     </DropdownButton>
   );
 }

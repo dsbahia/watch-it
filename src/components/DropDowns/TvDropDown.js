@@ -13,6 +13,7 @@ function TvDropDown() {
       drop="down-centered"
       autoClose="inside"
       data-bs-theme="dark"
+      class="bg-transparent"
     >
       <Dropdown.Item onClick={TopRatedHandleClick} href="/top-rated-tv-shows">
         Top Rated
