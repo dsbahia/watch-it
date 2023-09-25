@@ -25,7 +25,6 @@ function App() {
   }, [searchResults]);
   return (
     <div className="App">
-      <UserWindow />
       <Toaster />
       <NavBar />
       <img className="watch-it-logo" src={watchItLogo} alt="Watch It Logo" />
