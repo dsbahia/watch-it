@@ -7,6 +7,7 @@ import SearchBar from "./Search/SearchBar";
 import SearchResultsCard from "./Search/SearchResultsCard";
 import displayTrending from "./trending/Trending";
 import TopRatedMoviesContainer from "./TopRated/TopRatedMoviesContainer";
+import TopRatedTvShowContainer from "./TopRated/TopRatedTvShowContainer";
 import Footer from "./Footer";
 import "../styles/App.css";
 
@@ -35,6 +36,10 @@ function App() {
       <SearchBar setSearchResults={handleSearchResults} />{" "}
       <Routes>
         <Route path="/top-rated-movies" element={<TopRatedMoviesContainer />} />
+        <Route
+          path="/top-rated-tv-shows"
+          element={<TopRatedTvShowContainer />}
+        />
         <Route path="/" element={displayTrending()} />
         <Route
           path="/search"

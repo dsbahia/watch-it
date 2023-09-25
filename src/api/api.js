@@ -53,6 +53,14 @@ async function topRatedMovies() {
   return makeRequest(apiUrl, params);
 }
 
+async function topRatedTvShows() {
+  const apiUrl = "https://api.themoviedb.org/3/tv/top_rated";
+  const params = {
+    language: "en-GB",
+  };
+  return makeRequest(apiUrl, params);
+}
+
 export default {
   makeRequest,
   searchMovies,
@@ -60,4 +68,5 @@ export default {
   trendingTVShows,
   searchMovieById,
   topRatedMovies,
+  topRatedTvShows,
 };
