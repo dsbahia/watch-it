@@ -1,6 +1,7 @@
 .navbar {
   background-color: #00ADB5;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: right;
   padding: 0 20px;
@@ -17,18 +18,29 @@
   color: #EEEEEE;
   text-decoration: none;
 }
+
+.item-home {
+  font-size: 16px;
+  font-weight: bold;
+  color: #EEEEEE;
+  text-decoration: none;
+}
+
+.item-home:hover {
+  text-decoration: underline;
+}
 .item-upcoming {
   font-weight: bold;
   color: #FFFFFF;
   text-decoration: none;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 .item-trending {
   font-weight: bold;
   color: #FFFFFF;
   text-decoration: none;
-  margin-right: 20px;
+  margin-right: 5px;
 }
-.navbar-links-item:not(:last-child) {
-  margin-right: 20px;
+.navbar-links-item {
+  margin-right: 10px;
 }
