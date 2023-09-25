@@ -29,7 +29,7 @@ function TopRatedMoviesContainer() {
     setMaxResults(maxResults + 6);
   };
   return (
-    <div>
+    <div className="top-rated-container">
       <div className="top-rated-movie-title">Top Rated Movies</div>
       <div className="top-rated-results">
         {moviesData.slice(0, maxResults).map((data) => (
