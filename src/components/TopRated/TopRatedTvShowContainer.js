@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleChevronDown } from "@fortawesome/free-solid-svg-icons";
-import TopRatedTvShow from "./TopRatedMovies";
+import TopRatedTvShow from "./TopRatedTvShow";
 import api from "../../api/api";
 import "../../styles/topratedmoviescontainer.css";
 
@@ -37,7 +37,7 @@ function TopRatedTvShowContainer() {
             <TopRatedTvShow
               title={data.original_name}
               posterpath={data.poster_path}
-              movieId={data.id}
+              tvId={data.id}
             />
           </div>
         ))}

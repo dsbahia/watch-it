@@ -8,7 +8,7 @@ import "../../styles/topratedmovies.css";
 function TopRatedTvShow({ posterpath, title, tvId }) {
   const [isShown, setIsShown] = useState(false);
   const type = "tv";
-
+ console.log(tvId);
   const handleClick = () => {
     setIsShown((current) => !current);
   };
