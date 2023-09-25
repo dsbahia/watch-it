@@ -34,10 +34,7 @@ function App() {
       <img className="watch-it-logo" src={watchItLogo} alt="Watch It Logo" />
       <SearchBar setSearchResults={handleSearchResults} />{" "}
       <Routes>
-        <Route
-          path="/top-rated-movies"
-          element={showTopRated && <TopRatedMoviesContainer />}
-        />
+        <Route path="/top-rated-movies" element={<TopRatedMoviesContainer />} />
         <Route path="/" element={displayTrending()} />
         <Route
           path="/search"

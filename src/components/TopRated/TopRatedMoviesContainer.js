@@ -8,7 +8,7 @@ import "../../styles/topratedmoviescontainer.css";
 
 function TopRatedMoviesContainer() {
   const [moviesData, setMoviesData] = useState([]);
-  const [maxResults, setMaxResults] = useState(3);
+  const [maxResults, setMaxResults] = useState(9);
 
   useEffect(() => {
     async function fetchTopRatedMovies() {
@@ -26,20 +26,22 @@ function TopRatedMoviesContainer() {
   }, []);
 
   const handleShowMore = () => {
-    setMaxResults(maxResults + 3);
+    setMaxResults(maxResults + 6);
   };
   return (
-    <div className="top-rated-container">
+    <div>
       <div className="top-rated-movie-title">Top Rated Movies</div>
-      {moviesData.slice(0, maxResults).map((data) => (
-        <div key={data.id} className="top-rated-item">
-          <TopRatedMovies
-            title={data.original_title}
-            posterpath={data.poster_path}
-            movieId={data.id}
-          />
-        </div>
-      ))}
+      <div className="top-rated-results">
+        {moviesData.slice(0, maxResults).map((data) => (
+          <div key={data.id} className="top-rated-item">
+            <TopRatedMovies
+              title={data.original_title}
+              posterpath={data.poster_path}
+              movieId={data.id}
+            />
+          </div>
+        ))}
+      </div>{" "}
       {maxResults < moviesData.length && (
         <button
           type="button"
