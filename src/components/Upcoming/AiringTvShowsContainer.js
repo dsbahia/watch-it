@@ -37,7 +37,7 @@ function AiringTvShowContainer() {
             <AiringTvShow
               title={data.original_name}
               posterpath={data.poster_path}
-              movieId={data.id}
+              tvId={data.id}
             />
           </div>
         ))}
