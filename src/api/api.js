@@ -61,6 +61,14 @@ async function topRatedTvShows() {
   return makeRequest(apiUrl, params);
 }
 
+async function upcomingMovies() {
+  const apiUrl = "https://api.themoviedb.org/3/movie/upcoming";
+  const params = {
+    language: "en-GB",
+  };
+  return makeRequest(apiUrl, params);
+}
+
 export default {
   makeRequest,
   searchMovies,
@@ -69,4 +77,5 @@ export default {
   searchMovieById,
   topRatedMovies,
   topRatedTvShows,
+  upcomingMovies,
 };
