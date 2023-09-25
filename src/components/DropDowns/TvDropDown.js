@@ -6,7 +6,7 @@ function TvDropDown() {
   return (
     <DropdownButton id="item-tv-dropdown" title="Tv Shows">
       <Dropdown.Item href="/top-rated-tv-shows">Top Rated</Dropdown.Item>
-      <Dropdown.Item href="/upcoming-tv-shows">Upcoming</Dropdown.Item>
+      <Dropdown.Item href="/airing-tv-shows">Airing</Dropdown.Item>
     </DropdownButton>
   );
 }

@@ -5,10 +5,10 @@ import MoreDetails from "../MoreDetails";
 import NoImagePlaceholder from "../../images/No-Image-Placeholder.png";
 import "../../styles/topratedmovies.css";
 
-function TopRatedTvShow({ posterpath, title, tvId }) {
+function AiringTvShow({ posterpath, title, tvId }) {
   const [isShown, setIsShown] = useState(false);
   const type = "tv";
- console.log(tvId);
+
   const handleClick = () => {
     setIsShown((current) => !current);
   };
@@ -44,4 +44,4 @@ function TopRatedTvShow({ posterpath, title, tvId }) {
   );
 }
 
-export default TopRatedTvShow;
+export default AiringTvShow;
