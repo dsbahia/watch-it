@@ -15,6 +15,12 @@ exports[`App Renders Correctly 1`] = `
         class="navbar-links-item"
       />
       <a
+        class="item-home"
+        href="/"
+      >
+        Home
+      </a>
+      <a
         class="item-upcoming"
         href="/"
       >
@@ -26,18 +32,32 @@ exports[`App Renders Correctly 1`] = `
       >
         Login
       </a>
-      <a
-        class="item-upcoming"
-        href="/"
+      <div
+        class="dropdown-center"
+        data-bs-theme="dark"
       >
-        Movies
-      </a>
-      <a
-        class="item-upcoming"
-        href="/"
+        <button
+          aria-expanded="false"
+          class="dropdown-toggle btn btn-secondary"
+          id="movie-dropdown"
+          type="button"
+        >
+          Movies
+        </button>
+      </div>
+      <div
+        class="dropdown-center"
+        data-bs-theme="dark"
       >
-        TV Shows
-      </a>
+        <button
+          aria-expanded="false"
+          class="dropdown-toggle btn btn-secondary"
+          id="tv-dropdown"
+          type="button"
+        >
+          Tv Shows
+        </button>
+      </div>
     </div>
     <img
       alt="Watch It Logo"
