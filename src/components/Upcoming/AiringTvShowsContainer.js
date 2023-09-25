@@ -2,18 +2,18 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleChevronDown } from "@fortawesome/free-solid-svg-icons";
-import TopRatedTvShow from "./TopRatedTvShow";
+import AiringTvShow from "./AiringTvShows";
 import api from "../../api/api";
 import "../../styles/topratedmoviescontainer.css";
 
-function TopRatedTvShowContainer() {
+function AiringTvShowContainer() {
   const [moviesData, setMoviesData] = useState([]);
   const [maxResults, setMaxResults] = useState(9);
 
   useEffect(() => {
-    async function fetchTopRatedTvShow() {
+    async function fetchAiringTvShow() {
       try {
-        const data = await api.topRatedTvShows();
+        const data = await api.airingTvShows();
         setMoviesData(data.results);
       } catch (error) {
         const errorMsg = "An error occurred. Please try again later.";
@@ -22,7 +22,7 @@ function TopRatedTvShowContainer() {
         });
       }
     }
-    fetchTopRatedTvShow();
+    fetchAiringTvShow();
   }, []);
 
   const handleShowMore = () => {
@@ -30,11 +30,11 @@ function TopRatedTvShowContainer() {
   };
   return (
     <div className="top-rated-container">
-      <div className="top-rated-movie-title">Top Rated Tv Shows</div>
+      <div className="top-rated-movie-title">Airing Tv Shows</div>
       <div className="top-rated-results">
         {moviesData.slice(0, maxResults).map((data) => (
           <div key={data.id} className="top-rated-item">
-            <TopRatedTvShow
+            <AiringTvShow
               title={data.original_name}
               posterpath={data.poster_path}
               tvId={data.id}
@@ -59,4 +59,4 @@ function TopRatedTvShowContainer() {
   );
 }
 
-export default TopRatedTvShowContainer;
+export default AiringTvShowContainer;
