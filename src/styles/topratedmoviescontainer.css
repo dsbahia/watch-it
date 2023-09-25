@@ -7,6 +7,10 @@
   margin: auto;
 }
 
+.top-rated-container {
+  background-color: #eeeeee;
+}
+
 .top-rated-movie-title {
   font-size: 18px;
   font-weight: bold;
