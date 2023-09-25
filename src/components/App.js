@@ -8,6 +8,7 @@ import SearchResultsCard from "./Search/SearchResultsCard";
 import displayTrending from "./trending/Trending";
 import TopRatedMoviesContainer from "./TopRated/TopRatedMoviesContainer";
 import TopRatedTvShowContainer from "./TopRated/TopRatedTvShowContainer";
+import UpcomingMoviesContainer from "./Upcoming/UpcomingMoviesContainer";
 import Footer from "./Footer";
 import "../styles/App.css";
 
@@ -40,6 +41,7 @@ function App() {
           path="/top-rated-tv-shows"
           element={<TopRatedTvShowContainer />}
         />
+        <Route path="/upcoming-movies" element={<UpcomingMoviesContainer />} />
         <Route path="/" element={displayTrending()} />
         <Route
           path="/search"
