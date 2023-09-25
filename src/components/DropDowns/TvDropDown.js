@@ -14,7 +14,7 @@ function TvDropDown() {
       class="bg-transparent"
     >
       <Dropdown.Item href="/top-rated-tv-shows">Top Rated</Dropdown.Item>
-      <Dropdown.Item href="/upcoming-tv-shows">Upcoming</Dropdown.Item>
+      <Dropdown.Item href="/airing-tv-shows">Airing</Dropdown.Item>
     </DropdownButton>
   );
 }
