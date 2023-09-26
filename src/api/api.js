@@ -91,6 +91,13 @@ async function airingTvShows() {
   };
   return makeRequest(apiUrl, params);
 }
+async function movieTrailer(movieId) {
+  const apiUrl = `https://api.themoviedb.org/3/movie/${movieId}/videos`;
+  const params = {
+    language: "en-GB",
+  };
+  return makeRequest(apiUrl, params);
+}
 
 export default {
   makeRequest,
@@ -102,4 +109,5 @@ export default {
   topRatedTvShows,
   upcomingMovies,
   airingTvShows,
+  movieTrailer,
 };
