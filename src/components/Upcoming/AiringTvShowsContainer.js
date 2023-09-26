@@ -11,7 +11,7 @@ function AiringTvShowContainer() {
   const [maxResults, setMaxResults] = useState(9);
 
   useEffect(() => {
-    async function fetchAiringTvShow() {
+    async function fetchAiringTvShows() {
       try {
         const data = await api.airingTvShows();
         setMoviesData(data.results);
@@ -22,7 +22,7 @@ function AiringTvShowContainer() {
         });
       }
     }
-    fetchAiringTvShow();
+    fetchAiringTvShows();
   }, []);
 
   const handleShowMore = () => {
