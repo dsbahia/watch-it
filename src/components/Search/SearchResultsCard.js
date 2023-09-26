@@ -5,7 +5,7 @@ import "../../styles/searchresultscard.css";
 
 function SearchResultsCard({ results }) {
   useEffect(() => {
-    if (results && results.length === 0) {
+    if (!results || results.length === 0) {
       const noResultsMsg = "No Results Found";
 
       toast.error(noResultsMsg, {
@@ -23,7 +23,7 @@ function SearchResultsCard({ results }) {
       {results.map((data) => (
         <div key={data.id} className="item">
           <SearchCard
-            title={data.original_title}
+            title={data.title}
             posterpath={data.poster_path}
             movieId={data.id}
             overview={data.overview}

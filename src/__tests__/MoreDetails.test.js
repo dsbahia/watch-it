@@ -68,14 +68,12 @@ describe("MoreDetails", () => {
       const budgetElement = screen.getByText("Budget: $ 10,000,000");
       const revenueElement = screen.getByText("Revenue: $ 50,000,000");
       const genresElement = screen.getByText("Genres:");
-      const ratingElement = screen.getByText("Rating: 7.5/10");
       const runtimeElement = screen.getByText("Runtime: 60 Minutes");
 
       expect(overviewElement).toBeInTheDocument();
       expect(budgetElement).toBeInTheDocument();
       expect(revenueElement).toBeInTheDocument();
       expect(genresElement).toBeInTheDocument();
-      expect(ratingElement).toBeInTheDocument();
       expect(runtimeElement).toBeInTheDocument();
     });
   });

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import toast from "react-hot-toast";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 import "../styles/moredetails.css";
 import api from "../api/api";
 
@@ -28,7 +30,6 @@ function MoreDetails({ type, id }) {
   const genresList = moviesData.genres
     ? moviesData.genres.map((genre) => <div key={genre.id}>{genre.name}</div>)
     : [];
-  const roundedRating = Math.round(moviesData.vote_average * 10) / 10;
   const lastEpisodeRuntime = moviesData.last_episode_to_air
     ? `${moviesData.last_episode_to_air.runtime} Minutes`
     : `${moviesData.runtime} minutes`;
@@ -44,6 +45,49 @@ function MoreDetails({ type, id }) {
     ? `First Episode Release Date: ${moviesData.first_air_date}`
     : `Release  Date: ${moviesData.release_date}`;
 
+  function renderRatingStars(rating) {
+    const maxRating = 10;
+    const fullStars = Math.floor(rating);
+    const halfStar = rating - fullStars >= 0.5;
+    const emptyStars = maxRating - fullStars - (halfStar ? 1 : 0);
+
+    const starIcons = Array.from(
+      { length: fullStars + (halfStar ? 1 : 0) + emptyStars },
+      (_, index) => {
+        if (index < fullStars) {
+          return (
+            <FontAwesomeIcon
+              key={index}
+              icon={faStar}
+              style={{ color: "green" }}
+            />
+          );
+        }
+        if (index === fullStars && halfStar) {
+          return (
+            <FontAwesomeIcon
+              key="half"
+              icon={faStar}
+              style={{ color: "yellow" }}
+            />
+          );
+        }
+        return (
+          <FontAwesomeIcon
+            key={index}
+            icon={faStar}
+            style={{ color: "gray" }}
+          />
+        );
+      },
+    );
+
+    return starIcons;
+  }
+
+  const rating = Math.round(moviesData.vote_average * 10) / 10;
+  const ratingStars = renderRatingStars(rating);
+
   return (
     <div className="more-details-container">
       <div className="more-details-overview">{moviesData.overview}</div>
@@ -54,7 +98,7 @@ function MoreDetails({ type, id }) {
         <div>{genresList}</div>
       </div>
       <div className="more-details-item">{releaseDateCheck}</div>
-      <div className="more-details-item">Rating: {roundedRating}/10</div>
+      <div className="more-details-item">Rating: {ratingStars}</div>
       <div className="more-details-item">Runtime: {lastEpisodeRuntime}</div>
     </div>
   );
