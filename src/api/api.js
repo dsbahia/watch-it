@@ -69,6 +69,29 @@ async function upcomingMovies() {
   return makeRequest(apiUrl, params);
 }
 
+async function airingTvShows() {
+  const currentDate = new Date();
+  const futureDate = new Date();
+
+  futureDate.setDate(currentDate.getDate() + 1);
+
+  const formattedCurrentDate = currentDate.toISOString().split("T")[0];
+  const formattedFutureDate = futureDate.toISOString().split("T")[0];
+
+  const apiUrl = "https://api.themoviedb.org/3/tv/on_the_air";
+  const params = {
+    "air_date.gte": formattedCurrentDate,
+    "air_date.lte": formattedFutureDate,
+    include_adult: "false",
+    include_null_first_air_dates: "false",
+    language: "en-US",
+    page: "1",
+    sort_by: "popularity.desc",
+    with_origin_country: "GB",
+  };
+  return makeRequest(apiUrl, params);
+}
+
 export default {
   makeRequest,
   searchMovies,
@@ -78,4 +101,5 @@ export default {
   topRatedMovies,
   topRatedTvShows,
   upcomingMovies,
+  airingTvShows,
 };
