@@ -65,8 +65,8 @@ describe("MoreDetails", () => {
 
     await waitFor(() => {
       const overviewElement = screen.getByText("Mock Movie Overview");
-      const budgetElement = screen.getByText("Budget: $ 10000000");
-      const revenueElement = screen.getByText("Revenue: $ 50000000");
+      const budgetElement = screen.getByText("Budget: $ 10,000,000");
+      const revenueElement = screen.getByText("Revenue: $ 50,000,000");
       const genresElement = screen.getByText("Genres:");
       const ratingElement = screen.getByText("Rating: 7.5/10");
       const runtimeElement = screen.getByText("Runtime: 60 Minutes");
