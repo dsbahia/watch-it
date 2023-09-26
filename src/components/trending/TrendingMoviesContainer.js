@@ -37,7 +37,7 @@ function TrendingMoviesContainer() {
       {moviesData.slice(0, maxResults).map((data) => (
         <div key={data.id} className="trending-item">
           <TrendingMovie
-            title={data.original_title}
+            title={data.title}
             posterpath={data.poster_path}
             movieId={data.id}
             homepage={data.homepage}
