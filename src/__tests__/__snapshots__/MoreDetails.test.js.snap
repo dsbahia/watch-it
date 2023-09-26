@@ -32,7 +32,7 @@ exports[`MoreDetails renders  correctly 1`] = `
     <div
       class="more-details-item"
     >
-      Rating: NaN/10
+      Rating: 
     </div>
     <div
       class="more-details-item"
