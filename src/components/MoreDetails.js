@@ -29,7 +29,6 @@ function MoreDetails({ type, id }) {
     <div key={genre.id}>{genre.name}</div>
   )); 
   const roundedRating = (Math.round(moviesData.vote_average * 10) /10);
-
   const lastEpisodeRuntime = moviesData.last_episode_to_air ? `${moviesData.last_episode_to_air.runtime} Minutes` : `${moviesData.runtime} minutes`;
   const budgetCheck = moviesData.budget != null ? `Budget: $ ${moviesData.budget}` : 'Budget information not available';
   const revenueCheck = moviesData.revenue != null ? `Revenue: $ ${moviesData.revenue}` : 'Revenue information not available';
