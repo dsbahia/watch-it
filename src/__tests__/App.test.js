@@ -24,7 +24,7 @@ describe("App", () => {
     const registerLink = screen.getByText("Register");
     const loginLink = screen.getByText("Login");
     const moviesLink = screen.getByText("Movies");
-    const tvShowsLink = screen.getByText("TV Shows");
+    const tvShowsLink = screen.getByText("Tv Shows");
 
     expect(registerLink).toBeInTheDocument();
     expect(loginLink).toBeInTheDocument();
