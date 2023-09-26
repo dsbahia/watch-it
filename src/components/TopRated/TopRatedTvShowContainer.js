@@ -35,7 +35,7 @@ function TopRatedTvShowContainer() {
         {moviesData.slice(0, maxResults).map((data) => (
           <div key={data.id} className="top-rated-item">
             <TopRatedTvShow
-              title={data.original_name}
+              title={data.name}
               posterpath={data.poster_path}
               tvId={data.id}
             />
