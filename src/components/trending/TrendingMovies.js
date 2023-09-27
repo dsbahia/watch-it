@@ -5,7 +5,7 @@ import MoreDetails from "../MoreDetails";
 import "../../styles/trending.css";
 import NoImagePlaceholder from "../../images/No-Image-Placeholder.png";
 
-function TrendingMovie({ posterpath, title, movieId }) {
+function TrendingMovie({ posterpath, title, movieId, movieTrailer }) {
   const [isShown, setIsShown] = useState(false);
   const type = "movie";
 
@@ -22,11 +22,21 @@ function TrendingMovie({ posterpath, title, movieId }) {
     <div className="trending">
       <div className="trending-poster">
         {" "}
-        <img
-          className="trending-poster-img"
-          alt={`${title} Movie poster`}
-          src={posterCheck()}
-        />
+        {movieTrailer ? (
+          <a href={movieTrailer} target="_blank" rel="noopener noreferrer">
+            <img
+              className="trending-poster-img"
+              alt={`${title} Movie poster`}
+              src={posterCheck()}
+            />
+          </a>
+        ) : (
+          <img
+            className="trending-poster-img"
+            alt={`${title} Movie poster`}
+            src={posterCheck()}
+          />
+        )}
       </div>
       <div className="trending-title">{title}</div>
       <div className="more-details">
