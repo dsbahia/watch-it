@@ -59,7 +59,7 @@ function TopRatedTvShowContainer() {
               title={data.name}
               posterpath={data.poster_path}
               tvId={data.id}
-              tvshowtrailer={movieTrailers[data.id]}
+              tvshowTrailer={movieTrailers[data.id]}
             />
           </div>
         ))}
