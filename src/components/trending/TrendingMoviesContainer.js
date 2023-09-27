@@ -30,7 +30,7 @@ function TrendingMoviesContainer() {
   };
 
   return (
-    <div>
+    <div data-testid="movie-list">
       <div className="trending-movie-title">
         Trending Movies In The Last Day
       </div>
@@ -40,6 +40,7 @@ function TrendingMoviesContainer() {
             title={data.original_title}
             posterpath={data.poster_path}
             movieId={data.id}
+            homepage={data.homepage}
           />
         </div>
       ))}
