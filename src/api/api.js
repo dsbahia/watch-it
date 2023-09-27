@@ -42,7 +42,10 @@ async function trendingTVShows() {
 
 async function searchMovieById(type, id) {
   const apiUrl = `https://api.themoviedb.org/3/${type}/${id}`;
-  return makeRequest(apiUrl);
+  const params = {
+    language: "en-GB",
+  };
+  return makeRequest(apiUrl, params);
 }
 
 async function topRatedMovies() {
@@ -85,7 +88,6 @@ async function airingTvShows() {
     include_adult: "false",
     include_null_first_air_dates: "false",
     language: "en-US",
-    page: "1",
     sort_by: "popularity.desc",
     with_origin_country: "GB",
   };

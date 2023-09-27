@@ -35,7 +35,7 @@ function TrendingTVShowsContainer() {
       {tvData.slice(0, maxResults).map((data) => (
         <div key={data.id} className="trending-item">
           <TrendingTVShows
-            title={data.original_name}
+            title={data.name}
             posterpath={data.poster_path}
             tvId={data.id}
           />

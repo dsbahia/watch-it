@@ -29,13 +29,13 @@ function TopRatedTvShowContainer() {
     setMaxResults(maxResults + 6);
   };
   return (
-    <div className="top-rated-container">
+    <div data-testid="tv-list" className="top-rated-container">
       <div className="top-rated-movie-title">Top Rated Tv Shows</div>
       <div className="top-rated-results">
         {moviesData.slice(0, maxResults).map((data) => (
           <div key={data.id} className="top-rated-item">
             <TopRatedTvShow
-              title={data.original_name}
+              title={data.name}
               posterpath={data.poster_path}
               tvId={data.id}
             />

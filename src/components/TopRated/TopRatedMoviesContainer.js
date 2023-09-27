@@ -51,13 +51,13 @@ function TopRatedMoviesContainer() {
   };
 
   return (
-    <div className="top-rated-container">
+    <div data-testid="movie-list" className="top-rated-container">
       <div className="top-rated-movie-title">Top Rated Movies</div>
       <div className="top-rated-results">
         {moviesData.slice(0, maxResults).map((data) => (
           <div key={data.id} className="top-rated-item">
             <TopRatedMovies
-              title={data.original_title}
+              title={data.title}
               posterpath={data.poster_path}
               movieId={data.id}
               movieTrailer={movieTrailers[data.id]}
