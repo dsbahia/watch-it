@@ -5,7 +5,7 @@ import MoreDetails from "../MoreDetails";
 import NoImagePlaceholder from "../../images/No-Image-Placeholder.png";
 import "../../styles/topratedmovies.css";
 
-function TopRatedTvShow({ posterpath, title, tvId, tvshowtrailer }) {
+function TopRatedTvShow({ posterpath, title, tvId, tvshowTrailer }) {
   const [isShown, setIsShown] = useState(false);
   const type = "tv";
 
@@ -22,8 +22,8 @@ function TopRatedTvShow({ posterpath, title, tvId, tvshowtrailer }) {
     <div className="top-rated">
       <div className="top-rated-poster">
         {" "}
-        {tvshowtrailer ? (
-          <a href={tvshowtrailer} target="_blank" rel="noopener noreferrer">
+        {tvshowTrailer ? (
+          <a href={tvshowTrailer} target="_blank" rel="noopener noreferrer">
             <img
               className="top-rated-poster-img"
               alt={`${title} Tv Show poster`}
