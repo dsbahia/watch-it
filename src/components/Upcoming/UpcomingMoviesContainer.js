@@ -8,6 +8,7 @@ import "../../styles/topratedmoviescontainer.css";
 
 function TopRatedMoviesContainer() {
   const [moviesData, setMoviesData] = useState([]);
+  const [movieTrailers, setMovieTrailers] = useState({});
   const [maxResults, setMaxResults] = useState(9);
 
   useEffect(() => {
@@ -15,6 +16,26 @@ function TopRatedMoviesContainer() {
       try {
         const data = await api.upcomingMovies();
         setMoviesData(data.results);
+
+        const trailers = {};
+        await Promise.all(
+          data.results.map(async (movie) => {
+            const trailerData = await api.movieTrailer(movie.id);
+
+            if (trailerData.results && Array.isArray(trailerData.results)) {
+              const trailer = trailerData.results.find(
+                (item) => item.type === "Trailer",
+              );
+              if (trailer) {
+                const trailerUrl = `https://www.youtube.com/watch?v=${trailer.key}`;
+                trailers[movie.id] = trailerUrl;
+              }
+            } else {
+              console.error("Unexpected trailerData structure:", trailerData);
+            }
+          }),
+        );
+        setMovieTrailers(trailers);
       } catch (error) {
         const errorMsg = "An error occurred. Please try again later.";
         toast.error(errorMsg, {
@@ -38,6 +59,7 @@ function TopRatedMoviesContainer() {
               title={data.original_title}
               posterpath={data.poster_path}
               movieId={data.id}
+              movieTrailer={movieTrailers[data.id]}
             />
           </div>
         ))}
