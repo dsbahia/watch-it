@@ -13,13 +13,13 @@ describe("SearchResultsCard", () => {
   const results = [
     {
       id: 1,
-      original_title: "The Hunger Games",
+      title: "The Hunger Games",
       poster_path:
         "https://image.tmdb.org/t/p/original//4FAA18ZIja70d1Tu5hr5cj2q1sB.jpg",
     },
     {
       id: 2,
-      original_title: "Star Wars",
+      title: "Star Wars",
       poster_path:
         "https://image.tmdb.org/t/p/original//6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg",
     },
@@ -42,9 +42,9 @@ describe("SearchResultsCard", () => {
     );
 
     results.forEach((data) => {
-      expect(screen.getByText(data.original_title)).toBeInTheDocument();
+      expect(screen.getByText(data.title)).toBeInTheDocument();
       expect(
-        screen.getByAltText(`${data.original_title} Movie poster`)
+        screen.getByAltText(`${data.title} Movie poster`),
       ).toBeInTheDocument();
     });
   });
