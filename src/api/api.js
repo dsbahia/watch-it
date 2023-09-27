@@ -101,6 +101,14 @@ async function movieTrailer(movieId) {
   return makeRequest(apiUrl, params);
 }
 
+async function tvTrailer(tvId) {
+  const apiUrl = `https://api.themoviedb.org/3/tv/${tvId}/videos`;
+  const params = {
+    language: "en-GB",
+  };
+  return makeRequest(apiUrl, params);
+}
+
 export default {
   makeRequest,
   searchMovies,
@@ -112,4 +120,5 @@ export default {
   upcomingMovies,
   airingTvShows,
   movieTrailer,
+  tvTrailer,
 };
