@@ -5,7 +5,7 @@ import MoreDetails from "../MoreDetails";
 import NoImagePlaceholder from "../../images/No-Image-Placeholder.png";
 import "../../styles/topratedmovies.css";
 
-function UpcomingMovies({ posterpath, title, movieId }) {
+function UpcomingMovies({ posterpath, title, movieId, movieTrailer }) {
   const [isShown, setIsShown] = useState(false);
   const type = "movie";
 
@@ -22,11 +22,21 @@ function UpcomingMovies({ posterpath, title, movieId }) {
     <div className="top-rated">
       <div className="top-rated-poster">
         {" "}
-        <img
-          className="top-rated-poster-img"
-          alt={`${title} Movie poster`}
-          src={posterCheck()}
-        />
+        {movieTrailer ? (
+          <a href={movieTrailer} target="_blank" rel="noopener noreferrer">
+            <img
+              className="top-rated-poster-img"
+              alt={`${title} Movie poster`}
+              src={posterCheck()}
+            />
+          </a>
+        ) : (
+          <img
+            className="top-rated-poster-img"
+            alt={`${title} Movie poster`}
+            src={posterCheck()}
+          />
+        )}
       </div>
       <div className="top-rated-title">{title}</div>
       <div className="more-details">

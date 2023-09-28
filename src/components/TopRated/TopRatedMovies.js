@@ -3,10 +3,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import MoreDetails from "../MoreDetails";
 import NoImagePlaceholder from "../../images/No-Image-Placeholder.png";
+
 import "../../styles/topratedmovies.css";
 
-function TopRatedMovies({ posterpath, title, movieId }) {
+function TopRatedMovies({ posterpath, title, movieId, movieTrailer }) {
   const [isShown, setIsShown] = useState(false);
+
   const type = "movie";
 
   const handleClick = () => {
@@ -18,15 +20,26 @@ function TopRatedMovies({ posterpath, title, movieId }) {
     }
     return `https://image.tmdb.org/t/p/original/${posterpath}`;
   };
+
   return (
     <div className="top-rated">
       <div className="top-rated-poster">
         {" "}
-        <img
-          className="top-rated-poster-img"
-          alt={`${title} Movie poster`}
-          src={posterCheck()}
-        />
+        {movieTrailer ? (
+          <a href={movieTrailer} target="_blank" rel="noopener noreferrer">
+            <img
+              className="top-rated-poster-img"
+              alt={`${title} Movie poster`}
+              src={posterCheck()}
+            />
+          </a>
+        ) : (
+          <img
+            className="top-rated-poster-img"
+            alt={`${title} Movie poster`}
+            src={posterCheck()}
+          />
+        )}
       </div>
       <div className="top-rated-title">{title}</div>
       <div className="more-details">

@@ -1,13 +1,40 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../styles/searchcard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
+import { toast } from "react-hot-toast";
 import MoreDetails from "../MoreDetails";
 import NoImagePlaceholder from "../../images/No-Image-Placeholder.png";
+import api from "../../api/api";
 
 function SearchCard({ title, posterpath, movieId }) {
   const [isShown, setIsShown] = useState(false);
+  const [trailerUrl, setTrailerUrl] = useState([]);
   const movie = "movie";
+
+  useEffect(() => {
+    const posterClick = async () => {
+      try {
+        const response = await api.movieTrailer(movieId);
+        const trailer = response.results.find(
+          (video) => video.type === "Trailer",
+        );
+
+        if (trailer) {
+          const videoUrl = `https://www.youtube.com/watch?v=${trailer.key}`;
+          setTrailerUrl(videoUrl);
+        } else {
+          console.error("Unexpected trailerData structure:", response);
+        }
+      } catch (error) {
+        const errorMsg = "An error occurred. Please try again later.";
+        toast.error(errorMsg, {
+          duration: 5000,
+        });
+      }
+    };
+    posterClick();
+  }, [movieId]);
 
   const handleClick = () => {
     setIsShown((current) => !current);
@@ -24,11 +51,21 @@ function SearchCard({ title, posterpath, movieId }) {
     <div className="search-card">
       <div className="poster-card">
         {" "}
-        <img
-          className="poster-img"
-          alt={`${title} Movie poster`}
-          src={posterCheck()}
-        />
+        {trailerUrl ? (
+          <a href={trailerUrl} target="_blank" rel="noopener noreferrer">
+            <img
+              className="poster-img"
+              alt={`${title} Movie poster`}
+              src={posterCheck()}
+            />
+          </a>
+        ) : (
+          <img
+            className="poster-img"
+            alt={`${title} Movie poster`}
+            src={posterCheck()}
+          />
+        )}
       </div>
       <div className="title-card">{title}</div>
       <div className="more-details">

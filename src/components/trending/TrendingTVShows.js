@@ -5,7 +5,7 @@ import MoreDetails from "../MoreDetails";
 import "../../styles/trending.css";
 import NoImagePlaceholder from "../../images/No-Image-Placeholder.png";
 
-function TrendingTVShows({ posterpath, title, tvId }) {
+function TrendingTVShows({ posterpath, title, tvId, tvshowTrailer }) {
   const [isShown, setIsShown] = useState(false);
   const type = "tv";
 
@@ -22,11 +22,21 @@ function TrendingTVShows({ posterpath, title, tvId }) {
     <div className="trending">
       <div className="trending-poster">
         {" "}
-        <img
-          className="trending-poster-img"
-          alt={`${title} TV Show Poster`}
-          src={posterCheck()}
-        />
+        {tvshowTrailer ? (
+          <a href={tvshowTrailer} target="_blank" rel="noopener noreferrer">
+            <img
+              className="trending-poster-img"
+              alt={`${title} Tv Show poster`}
+              src={posterCheck()}
+            />
+          </a>
+        ) : (
+          <img
+            className="trending-poster-img"
+            alt={`${title} Tv Show poster`}
+            src={posterCheck()}
+          />
+        )}
       </div>
       <div className="trending-title">{title}</div>
       <div className="more-details">

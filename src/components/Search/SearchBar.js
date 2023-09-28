@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import api from "../../api/api";
 import "../../styles/searchbar.css";
