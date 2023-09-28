@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 import { onAuthStateChanged } from "firebase/auth";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import NavBar from "./NavBar";
 import watchItLogo from "../images/watch-it.png";
@@ -16,6 +16,7 @@ import Register from "./Registration/Register";
 import VerifyEmail from "./Registration/VerifyEmail";
 import Login from "./Registration/Login";
 import PrivateRoute from "./Registration/PrivateRoute";
+import Homepage from "./Homepage";
 
 function App() {
   const [searchResults, setSearchResults] = useState({});
@@ -43,21 +44,25 @@ function App() {
     <div className="App">
       <Toaster />
       <NavBar />
-      <img className="watch-it-logo" src={watchItLogo} alt="Watch It Logo" />
-      <SearchBar setSearchResults={handleSearchResults} />{" "}
-      {showTrending && displayTrending()}
-      <SearchResultsCard results={searchResults.results} />
-      <Footer />
-      <Router>
-        <AuthProvider value={{ currentUser, timeActive, setTimeActive }}>
-          <Routes>
-            <PrivateRoute exact path="/" component={Profile} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/verify-email" component={VerifyEmail} />
-          </Routes>
-        </AuthProvider>
-      </Router>
+      <AuthProvider value={{ currentUser, timeActive, setTimeActive }}>
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <Homepage
+                handleSearchResults={handleSearchResults}
+                showTrending={showTrending}
+                searchResults={searchResults}
+              />
+            }
+          />
+          <Route path="login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/verify-email" element={<VerifyEmail />} />
+        </Routes>
+        <Footer />
+      </AuthProvider>
     </div>
   );
 }

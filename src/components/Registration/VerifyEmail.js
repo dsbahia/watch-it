@@ -7,40 +7,26 @@ import "../../styles/verifyEmail.css";
 
 function VerifyEmail() {
   const { currentUser } = useAuthValue();
-  const [time, setTime] = useState(60);
+  const [time, setTime] = useState([]);
+  const [endTime, setEndTime] = useState([]);
   const { timeActive, setTimeActive } = useAuthValue();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      currentUser
-        ?.reload()
-        .then(() => {
-          if (currentUser?.emailVerified) {
-            clearInterval(interval);
-            navigate("/");
-          }
-        })
-        .catch((err) => {
-          alert(err.message);
-        });
-    }, 1000);
-  }, [navigate, currentUser]);
+  const startWork = (e) => {
+    e.preventDefault();
+    const StartTime = {
+      thisTime: new Date().toLocaleString(),
+    };
+    setTime(StartTime);
+  };
 
-  useEffect(() => {
-    let interval = null;
-    if (timeActive && time !== 0) {
-      interval = setInterval(() => {
-        setTime((time) => time - 1);
-      }, 1000);
-    } else if (time === 0) {
-      setTimeActive(false);
-      setTime(60);
-      clearInterval(interval);
-    }
-    return () => clearInterval(interval);
-  }, [timeActive, time, setTimeActive]);
-
+  const finishWork = (e) => {
+    e.preventDefault();
+    const StopTime = {
+      endTime: new Date().toLocaleString(),
+    };
+    setEndTime(StopTime);
+  };
   const resendEmailVerification = () => {
     sendEmailVerification(auth.currentUser)
       .then(() => {
@@ -50,7 +36,6 @@ function VerifyEmail() {
         alert(err.message);
       });
   };
-
   return (
     <div className="center">
       <div className="verify-email">
@@ -64,7 +49,7 @@ function VerifyEmail() {
         <button
           type="button"
           onClick={resendEmailVerification}
-          disabled={timeActive}
+          disabled={endTime.endTime}
         >
           Resend Email
           {timeActive && time}

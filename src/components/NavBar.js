@@ -7,11 +7,11 @@ function NavBar() {
     <div className="navbar">
       <div className="navbar-links-item" />
 
-      <Link className="item-upcoming" to="/">
+      <Link className="item-upcoming" to="/Register">
         Register
       </Link>
 
-      <Link className="item-upcoming" to="/">
+      <Link className="item-upcoming" to="/Login">
         Login
       </Link>
 
