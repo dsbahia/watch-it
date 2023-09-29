@@ -4,7 +4,6 @@ import { onAuthStateChanged } from "firebase/auth";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
-import displayTrending from "./trending/Trending";
 import { auth } from "./Registration/firebase";
 import { AuthProvider } from "./Registration/AuthContext";
 import Register from "./Registration/Register";
@@ -54,7 +53,6 @@ function App() {
             element={
               <Homepage
                 handleSearchResults={handleSearchResults}
-                showTrending={showTrending}
                 searchResults={searchResults}
               />
             }
@@ -75,7 +73,7 @@ function App() {
             element={<UpcomingMoviesContainer />}
           />
           <Route path="/airing-tv-shows" element={<AiringTvShowContainer />} />
-          <Route path="/" element={displayTrending()} />
+
           <Route
             path="/search"
             element={<SearchResultsCard results={searchResults.results} />}

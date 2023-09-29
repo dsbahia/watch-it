@@ -2,19 +2,30 @@
 
 exports[`TopRatedTvShowContainer matches the snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class="top-rated-container"
-    data-testid="tv-list"
-  >
-    <div
-      class="top-rated-movie-title"
+  <div>
+    <a
+      href="/"
     >
-      Top Rated Tv Shows
-    </div>
+      <img
+        alt="Watch It Logo"
+        class="watch-it-logo"
+        src="watch-it.png"
+      />
+    </a>
     <div
-      class="top-rated-results"
-    />
-     
+      class="top-rated-container"
+      data-testid="tv-list"
+    >
+      <div
+        class="top-rated-movie-title"
+      >
+        Top Rated Tv Shows
+      </div>
+      <div
+        class="top-rated-results"
+      />
+       
+    </div>
   </div>
 </DocumentFragment>
 `;

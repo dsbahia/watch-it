@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { toast } from "react-hot-toast";
 import SearchCard from "./SearchCard";
+import WatchItLogo from "../WatchItLogo";
 import "../../styles/searchresultscard.css";
 
 function SearchResultsCard({ results }) {
@@ -19,17 +20,21 @@ function SearchResultsCard({ results }) {
   }
 
   return (
-    <div className="search-results-card" data-testid="search-results-card">
-      {results.map((data) => (
-        <div key={data.id} className="item">
-          <SearchCard
-            title={data.title}
-            posterpath={data.poster_path}
-            movieId={data.id}
-            overview={data.overview}
-          />
-        </div>
-      ))}
+    <div>
+      <WatchItLogo />
+      <div className="top-rated-movie-title">Searched Movies</div>
+      <div className="search-results-card" data-testid="search-results-card">
+        {results.map((data) => (
+          <div key={data.id} className="item">
+            <SearchCard
+              title={data.title}
+              posterpath={data.poster_path}
+              movieId={data.id}
+              overview={data.overview}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
