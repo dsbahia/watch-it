@@ -103,56 +103,58 @@ exports[`App Renders Correctly 1`] = `
         </div>
       </div>
     </div>
-    <img
-      alt="Watch It Logo"
-      class="watch-it-logo"
-      src="watch-it.png"
-    />
-    <div
-      class="search-bar"
-    >
-      <form
-        class="search-form"
-      >
-        <input
-          class="search-input"
-          data-testid="search-input"
-          placeholder="Search"
-          type="text"
-        />
-        <button
-          class="search-button"
-          type="submit"
-        >
-          Go!
-        </button>
-      </form>
-    </div>
-     
-    <div
-      class="trending-results-container"
-    >
+    <div>
+      <img
+        alt="Watch It Logo"
+        class="watch-it-logo"
+        src="watch-it.png"
+      />
       <div
-        class="trending-results-container-movies"
+        class="search-bar"
+      >
+        <form
+          class="search-form"
+        >
+          <input
+            class="search-input"
+            data-testid="search-input"
+            placeholder="Search"
+            type="text"
+          />
+          <button
+            class="search-button"
+            type="submit"
+          >
+            Go!
+          </button>
+        </form>
+      </div>
+       
+      <div
+        class="trending-results-container"
       >
         <div
-          data-testid="movie-list"
+          class="trending-results-container-movies"
         >
           <div
-            class="trending-movie-title"
+            data-testid="movie-list"
           >
-            Trending Movies In The Last Day
+            <div
+              class="trending-movie-title"
+            >
+              Trending Movies In The Last Day
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        class="trending-results-container-tv-shows"
-      >
-        <div>
-          <div
-            class="trending-tv-title"
-          >
-            Trending TV Shows In The Last Day
+        <div
+          class="trending-results-container-tv-shows"
+        >
+          <div>
+            <div
+              class="trending-tv-title"
+            >
+              Trending TV Shows In The Last Day
+            </div>
           </div>
         </div>
       </div>

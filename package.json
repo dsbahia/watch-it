@@ -13,6 +13,8 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.5.0",
+    "firebase": "^10.4.0",
+    "firebase-auth": "^0.1.2",
     "bootstrap": "^5.3.2",
     "dotenv": "^16.3.1",
     "eslint": "^8.49.0",
@@ -22,8 +24,8 @@
     "react-bootstrap": "^2.8.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.1",
-    "react-router-dom": "^6.16.0",
-    "react-scripts": "5.0.1",
+    "react-router-dom": "^6.15.0",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -33,6 +35,9 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
+    "rules": {
+      "no-shadow": "off"
+    },
     "extends": [
       "react-app",
       "react-app/jest",

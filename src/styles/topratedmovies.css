@@ -5,12 +5,20 @@
 .top-rated-poster {
   flex: 0 0 auto;
   margin-bottom: 10px;
+  position: relative; 
 }
 
-.top-rated-poster-img{
+.top-rated-poster-img {
   max-width: 100%;
   height: auto;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  opacity: 1; /* Default opacity */
+  position: relative; /* Default position */
+  transition: opacity 0.3s; /* Add a transition for smoother hover effect */
+}
+
+.top-rated-poster:hover .top-rated-poster-img {
+  opacity: 0.9; /* Adjusted opacity on hover */
 }
 
 .top-rated-title {
@@ -36,4 +44,17 @@
   margin-left: 5px;
   font-size: 1rem;
   color: #00adb5;
+}
+
+.youtube-icon-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.top-rated-poster:hover .youtube-icon-overlay {
+  opacity: 1;
 }

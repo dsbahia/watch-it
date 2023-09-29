@@ -14,3 +14,11 @@
   text-align: center;
   height: 20px;
 }
+
+.trending-results-container-movies {
+  flex: 1;
+}
+
+.trending-results-container-tv-shows {
+  flex: 1; /* Expand to fill available space */
+}

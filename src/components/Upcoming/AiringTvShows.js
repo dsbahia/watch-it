@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import MoreDetails from "../MoreDetails";
+import YouTubeIcon from "../YouTubeIcon/YouTubeIcon";
 import NoImagePlaceholder from "../../images/No-Image-Placeholder.png";
 import "../../styles/topratedmovies.css";
 
 function AiringTvShow({ posterpath, title, tvId, tvshowTrailer }) {
+  const [isHovered, setIsHovered] = useState(false);
   const [isShown, setIsShown] = useState(false);
   const type = "tv";
 
@@ -28,7 +30,10 @@ function AiringTvShow({ posterpath, title, tvId, tvshowTrailer }) {
               className="top-rated-poster-img"
               alt={`${title} Tv Show poster`}
               src={posterCheck()}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
             />
+            {isHovered && <YouTubeIcon />}
           </a>
         ) : (
           <img
