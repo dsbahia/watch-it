@@ -9,11 +9,17 @@ exports[`SearchCard renders correctly 1`] = `
       class="poster-card"
     >
        
-      <img
-        alt="Guardians of the Galaxy Movie poster"
-        class="poster-img"
-        src="https://image.tmdb.org/t/p/original/https://image.tmdb.org/t/p/w92//r2J02Z2OpNTctfOSN1Ydgii51I3.jpg"
-      />
+      <a
+        href=""
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <img
+          alt="Guardians of the Galaxy Movie poster"
+          class="poster-img"
+          src="https://image.tmdb.org/t/p/original/https://image.tmdb.org/t/p/w92//r2J02Z2OpNTctfOSN1Ydgii51I3.jpg"
+        />
+      </a>
     </div>
     <div
       class="title-card"
@@ -23,9 +29,9 @@ exports[`SearchCard renders correctly 1`] = `
     <div
       class="more-details"
     >
-      <a
+      <button
         class="more-details-link"
-        href="/"
+        type="button"
       >
         More Details
         <svg
@@ -43,7 +49,7 @@ exports[`SearchCard renders correctly 1`] = `
             fill="currentColor"
           />
         </svg>
-      </a>
+      </button>
     </div>
   </div>
 </DocumentFragment>

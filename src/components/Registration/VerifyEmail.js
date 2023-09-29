@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { React, useState, useEffect } from "react";
 import { auth } from "./firebase";
 import { useNavigate } from "react-router-dom";
 import { sendEmailVerification } from "firebase/auth";
@@ -61,7 +61,7 @@ function VerifyEmail() {
           <span>{currentUser?.email}</span>
         </p>
         <span>Follow the instruction in the email to verify your account</span>
-        <button onClick={resendEmailVerification} disabled={timeActive}>
+        <button onClick={resendEmailVerification} type="button" disabled={timeActive}>
           Resend Email
           {timeActive && time}
         </button>

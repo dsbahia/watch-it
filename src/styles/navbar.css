@@ -1,34 +1,59 @@
+/* navbar.css */
 .navbar {
   background-color: #00ADB5;
-  display: flex;
-  align-items: center;
-  justify-content: right;
-  padding: 0 20px;
   height: 75px;
-}
-.navbar-links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
 }
-.navbar-links-item {
+
+.nav-link {
   font-size: 16px;
+  font-weight: bold;
   color: #EEEEEE;
   text-decoration: none;
+  margin-right: 10px; 
 }
-.item-upcoming {
+
+.navbar-items {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
   font-weight: bold;
   color: #FFFFFF;
-  text-decoration: none;
-  margin-right: 20px;
 }
-.item-trending {
-  font-weight: bold;
+
+.navbar-icon {
+  color: #393E46;
+}
+#item-movie-dropdown {
+  background-color: #00ADB5;
   color: #FFFFFF;
-  text-decoration: none;
-  margin-right: 20px;
+  border: none;
+  font-weight: bold;
 }
-.navbar-links-item:not(:last-child) {
-  margin-right: 20px;
+
+#item-movie-dropdown:hover {
+  color: #FFFFFF;
+}
+
+#item-tv-dropdown {
+  background-color: #00ADB5;
+  color: #FFFFFF;
+  border: none;
+  font-weight: bold;
+}
+
+#item-tv-dropdown:hover {
+  color: #FFFFFF;
+}
+
+#item-tv-dropdown .dropdown-item {
+  color: #EEEEEE;
+}
+
+#item-tv-dropdown .dropdown-item:hover {
+  background-color: #0098A6;
+  color: #FFFFFF;
 }

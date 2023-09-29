@@ -4,7 +4,6 @@ import { onAuthStateChanged } from "firebase/auth";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
-import "../styles/App.css";
 import displayTrending from "./trending/Trending";
 import { auth } from "./Registration/firebase";
 import { AuthProvider } from "./Registration/AuthContext";
@@ -12,12 +11,19 @@ import Register from "./Registration/Register";
 import VerifyEmail from "./Registration/VerifyEmail";
 import Login from "./Registration/Login";
 import Homepage from "./Homepage";
+import SearchResultsCard from "./Search/SearchResultsCard";
+import TopRatedMoviesContainer from "./TopRated/TopRatedMoviesContainer";
+import TopRatedTvShowContainer from "./TopRated/TopRatedTvShowContainer";
+import UpcomingMoviesContainer from "./Upcoming/UpcomingMoviesContainer";
+import AiringTvShowContainer from "./Upcoming/AiringTvShowsContainer";
+import "../styles/App.css";
 
 function App() {
   const [searchResults, setSearchResults] = useState({});
   const [showTrending, setShowTrending] = useState(true);
   const [currentUser, setCurrentUser] = useState(null);
   const [timeActive, setTimeActive] = useState(false);
+  const [showTopRated, setShowTopRated] = useState(true);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -33,6 +39,7 @@ function App() {
   useEffect(() => {
     if (searchResults.results && searchResults.results.length === 0) {
       setShowTrending(true);
+      setShowTopRated(true);
     }
   }, [searchResults]);
   return (
@@ -55,6 +62,24 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/verify-email" element={<VerifyEmail />} />
+          <Route
+            path="/top-rated-movies"
+            element={<TopRatedMoviesContainer />}
+          />
+          <Route
+            path="/top-rated-tv-shows"
+            element={<TopRatedTvShowContainer />}
+          />
+          <Route
+            path="/upcoming-movies"
+            element={<UpcomingMoviesContainer />}
+          />
+          <Route path="/airing-tv-shows" element={<AiringTvShowContainer />} />
+          <Route path="/" element={displayTrending()} />
+          <Route
+            path="/search"
+            element={<SearchResultsCard results={searchResults.results} />}
+          />
         </Routes>
         <Footer />
       </AuthProvider>

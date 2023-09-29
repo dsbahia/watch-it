@@ -21,11 +21,15 @@ describe("App", () => {
       </BrowserRouter>,
     );
 
-    const upcomingLink = screen.getByText("Upcoming");
-    const trendingLink = screen.getByText("Trending");
+    const registerLink = screen.getByText("Register");
+    const loginLink = screen.getByText("Login");
+    const moviesLink = screen.getByText("Movies");
+    const tvShowsLink = screen.getByText("Tv Shows");
 
-    expect(upcomingLink).toBeInTheDocument();
-    expect(trendingLink).toBeInTheDocument();
+    expect(registerLink).toBeInTheDocument();
+    expect(loginLink).toBeInTheDocument();
+    expect(moviesLink).toBeInTheDocument();
+    expect(tvShowsLink).toBeInTheDocument();
   });
 
   it("Displays App Logo", async () => {

@@ -12,3 +12,8 @@
   box-sizing: border-box;
   margin-top: 10px;
 }
+
+.show-more-button {
+  border: none;
+  padding: 10px;
+}
