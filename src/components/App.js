@@ -2,20 +2,15 @@ import React, { useState, useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 import { onAuthStateChanged } from "firebase/auth";
 import { Routes, Route } from "react-router-dom";
-import SearchBar from "./SearchBar";
 import NavBar from "./NavBar";
-import watchItLogo from "../images/watch-it.png";
-import SearchResultsCard from "./SearchResultsCard";
 import Footer from "./Footer";
 import "../styles/App.css";
 import displayTrending from "./trending/Trending";
 import { auth } from "./Registration/firebase";
 import { AuthProvider } from "./Registration/AuthContext";
-import Profile from "./Registration/Profile";
 import Register from "./Registration/Register";
 import VerifyEmail from "./Registration/VerifyEmail";
 import Login from "./Registration/Login";
-import PrivateRoute from "./Registration/PrivateRoute";
 import Homepage from "./Homepage";
 
 function App() {
