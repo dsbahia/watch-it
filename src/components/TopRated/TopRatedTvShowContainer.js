@@ -5,6 +5,7 @@ import { faCircleChevronDown } from "@fortawesome/free-solid-svg-icons";
 import TopRatedTvShow from "./TopRatedTvShow";
 import api from "../../api/api";
 import "../../styles/topratedmoviescontainer.css";
+import WatchItLogo from "../WatchItLogo";
 
 function TopRatedTvShowContainer() {
   const [moviesData, setMoviesData] = useState([]);
@@ -50,33 +51,36 @@ function TopRatedTvShowContainer() {
     setMaxResults(maxResults + 6);
   };
   return (
-    <div data-testid="tv-list" className="top-rated-container">
-      <div className="top-rated-movie-title">Top Rated Tv Shows</div>
-      <div className="top-rated-results">
-        {moviesData.slice(0, maxResults).map((data) => (
-          <div key={data.id} className="top-rated-item">
-            <TopRatedTvShow
-              title={data.name}
-              posterpath={data.poster_path}
-              tvId={data.id}
-              tvshowTrailer={movieTrailers[data.id]}
+    <div>
+      <WatchItLogo />
+      <div data-testid="tv-list" className="top-rated-container">
+        <div className="top-rated-movie-title">Top Rated Tv Shows</div>
+        <div className="top-rated-results">
+          {moviesData.slice(0, maxResults).map((data) => (
+            <div key={data.id} className="top-rated-item">
+              <TopRatedTvShow
+                title={data.name}
+                posterpath={data.poster_path}
+                tvId={data.id}
+                tvshowTrailer={movieTrailers[data.id]}
+              />
+            </div>
+          ))}
+        </div>{" "}
+        {maxResults < moviesData.length && (
+          <button
+            type="button"
+            className="show-more-button"
+            onClick={handleShowMore}
+          >
+            <FontAwesomeIcon
+              icon={faCircleChevronDown}
+              size="2xl"
+              style={{ color: "#393E46" }}
             />
-          </div>
-        ))}
-      </div>{" "}
-      {maxResults < moviesData.length && (
-        <button
-          type="button"
-          className="show-more-button"
-          onClick={handleShowMore}
-        >
-          <FontAwesomeIcon
-            icon={faCircleChevronDown}
-            size="2xl"
-            style={{ color: "#393E46" }}
-          />
-        </button>
-      )}
+          </button>
+        )}
+      </div>
     </div>
   );
 }

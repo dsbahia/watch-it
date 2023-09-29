@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import MoreDetails from "../MoreDetails";
+import YouTubeIcon from "../YouTubeIcon/YouTubeIcon";
 import "../../styles/trending.css";
 import NoImagePlaceholder from "../../images/No-Image-Placeholder.png";
 
 function TrendingMovie({ posterpath, title, movieId, movieTrailer }) {
+  const [isHovered, setIsHovered] = useState(false);
   const [isShown, setIsShown] = useState(false);
   const type = "movie";
 
@@ -28,7 +30,10 @@ function TrendingMovie({ posterpath, title, movieId, movieTrailer }) {
               className="trending-poster-img"
               alt={`${title} Movie poster`}
               src={posterCheck()}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
             />
+            {isHovered && <YouTubeIcon />}
           </a>
         ) : (
           <img

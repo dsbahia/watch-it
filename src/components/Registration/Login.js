@@ -34,10 +34,10 @@ function Login() {
   };
 
   return (
-    <div className="center">
-      <div className="auth">
+    <div className="auth-container">
+      <div className="auth-form">
         <h1>Log in</h1>
-        {error && <div className="auth__error">{error}</div>}
+        {error && <div className="auth-error">{error}</div>}
         <form onSubmit={login} name="login_form">
           <input
             type="email"
@@ -45,6 +45,7 @@ function Login() {
             required
             placeholder="Enter your email"
             onChange={(e) => setEmail(e.target.value)}
+            className="auth-input"
           />
 
           <input
@@ -53,14 +54,17 @@ function Login() {
             required
             placeholder="Enter your password"
             onChange={(e) => setPassword(e.target.value)}
+            className="auth-input"
           />
 
-          <button type="submit">Login</button>
+          <button type="submit" className="auth-button">
+            Login
+          </button>
         </form>
-        <p>
+        <span>
           Don&apos;t have an account?
           <Link to="/register">Create one here</Link>
-        </p>
+        </span>
       </div>
     </div>
   );

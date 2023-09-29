@@ -48,40 +48,47 @@ function Register() {
   };
 
   return (
-    <div className="auth">
-      <h1>Register</h1>
-      {error && <div className="auth__error">{error}</div>}
-      <form onSubmit={register} name="registration_form">
-        <input
-          type="email"
-          value={email}
-          placeholder="Enter your email"
-          required
-          onChange={(e) => setEmail(e.target.value)}
-        />
+    <div className="auth-container">
+      <div className="auth-form">
+        <h1>Register</h1>
+        {error && <div className="auth-error">{error}</div>}
+        <form onSubmit={register} name="registration_form">
+          <input
+            type="email"
+            value={email}
+            placeholder="Enter your email"
+            required
+            onChange={(e) => setEmail(e.target.value)}
+            className="auth-input"
+          />
 
-        <input
-          type="password"
-          value={password}
-          required
-          placeholder="Enter your password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
+          <input
+            type="password"
+            value={password}
+            required
+            placeholder="Enter your password"
+            onChange={(e) => setPassword(e.target.value)}
+            className="auth-input"
+          />
 
-        <input
-          type="password"
-          value={confirmPassword}
-          required
-          placeholder="Confirm password"
-          onChange={(e) => setConfirmPassword(e.target.value)}
-        />
+          <input
+            type="password"
+            value={confirmPassword}
+            required
+            placeholder="Confirm password"
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            className="auth-input"
+          />
 
-        <button type="submit">Register</button>
-      </form>
-      <span>
-        Already have an account?
-        <Link to="/login">login</Link>
-      </span>
+          <button type="submit" className="auth-button">
+            Register
+          </button>
+        </form>
+        <span>
+          Already have an account?
+          <Link to="/login">Login</Link>
+        </span>
+      </div>
     </div>
   );
 }
