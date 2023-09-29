@@ -3,11 +3,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import MoreDetails from "../MoreDetails";
 import NoImagePlaceholder from "../../images/No-Image-Placeholder.png";
+import YouTubeIcon from "../YouTubeIcon/YouTubeIcon";
 
 import "../../styles/topratedmovies.css";
 
 function TopRatedMovies({ posterpath, title, movieId, movieTrailer }) {
   const [isShown, setIsShown] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   const type = "movie";
 
@@ -31,7 +33,10 @@ function TopRatedMovies({ posterpath, title, movieId, movieTrailer }) {
               className="top-rated-poster-img"
               alt={`${title} Movie poster`}
               src={posterCheck()}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
             />
+            {isHovered && <YouTubeIcon />}
           </a>
         ) : (
           <img
