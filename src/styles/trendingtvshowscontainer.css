@@ -1,19 +1,4 @@
 .trending-tv-title {
   font-size: 18px;
   font-weight: bold;
-  margin-bottom: 10px;
-  text-align: center;
-  height: 20px;
-}
-
-.trending-item {
-  width: calc 100%; 
-  margin-bottom: 20px; 
-  box-sizing: border-box;
-  margin-top: 10px;
-}
-
-.show-more-button {
-  border: none;
-  padding: 10px;
 }
