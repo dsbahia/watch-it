@@ -1,6 +1,6 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
-import TopRatedMovies from "../../components/TopRated/TopRatedMovies";
+import UpcomingMovies from "../../components/Upcoming/UpcomingMovies";
 
 jest.mock("../../components/MoreDetails", () => {
   return function MockMoreDetails() {
@@ -8,14 +8,14 @@ jest.mock("../../components/MoreDetails", () => {
   };
 });
 
-describe("TopRatedMovies", () => {
+describe("UpcomingMovies", () => {
   it("renders correctly", () => {
     const props = {
       posterpath: "posterpath.jpg",
       title: "test movie",
       movieId: 1,
     };
-    const { asFragment } = render(<TopRatedMovies {...props} />);
+    const { asFragment } = render(<UpcomingMovies {...props} />);
     expect(asFragment).toMatchSnapshot();
   });
 
@@ -26,7 +26,7 @@ describe("TopRatedMovies", () => {
       movieId: 1,
     };
 
-    const { getByText, getByAltText } = render(<TopRatedMovies {...props} />);
+    const { getByText, getByAltText } = render(<UpcomingMovies {...props} />);
     expect(getByText("Test Movie")).toBeInTheDocument();
     expect(getByAltText(`${props.title} Movie poster`)).toHaveAttribute(
       "src",
@@ -40,7 +40,7 @@ describe("TopRatedMovies", () => {
       title: "Test Movie",
       movieId: 1,
     };
-    const { getByText, queryByText } = render(<TopRatedMovies {...props} />);
+    const { getByText, queryByText } = render(<UpcomingMovies {...props} />);
     const moreDetailsButton = getByText("More Details");
 
     expect(queryByText("MockMoreDetails Component")).toBeNull();
