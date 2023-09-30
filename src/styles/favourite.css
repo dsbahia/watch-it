@@ -1,4 +1,5 @@
 .fav-btn {
     background-color: #ffffff;
-    box-shadow: 0;
-}
+    border: none;
+    padding: 0;
+  }
