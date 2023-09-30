@@ -1,37 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TopRatedMoviesContainer matches the snapshot 1`] = `
+exports[`AiringTvShowsContainer matches the snapshot 1`] = `
 <DocumentFragment>
   <div>
-<<<<<<< HEAD
-    <a
-      href="/"
-    >
-      <img
-        alt="Watch It Logo"
-        class="watch-it-logo"
-        src="watch-it.png"
-      />
-    </a>
-=======
     <img
       alt="Watch It Logo"
       class="watch-it-logo"
       src="watch-it.png"
     />
->>>>>>> origin/main
     <div
       class="top-rated-container"
-      data-testid="movie-list"
+      data-testid="tv-list"
     >
       <div
         class="top-rated-movie-title"
       >
-        Top Rated Movies
+        Airing Tv Shows
       </div>
       <div
         class="top-rated-results"
       />
+       
     </div>
   </div>
 </DocumentFragment>
