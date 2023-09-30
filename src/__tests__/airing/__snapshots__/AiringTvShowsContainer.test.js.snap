@@ -3,11 +3,15 @@
 exports[`AiringTvShowsContainer matches the snapshot 1`] = `
 <DocumentFragment>
   <div>
-    <img
-      alt="Watch It Logo"
-      class="watch-it-logo"
-      src="watch-it.png"
-    />
+    <a
+      href="/"
+    >
+      <img
+        alt="Watch It Logo"
+        class="watch-it-logo"
+        src="watch-it.png"
+      />
+    </a>
     <div
       class="top-rated-container"
       data-testid="tv-list"
