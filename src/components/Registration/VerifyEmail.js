@@ -1,7 +1,8 @@
-import { React, useState, useEffect } from "react";
-import { auth } from "./firebase";
+import React, { useState, useEffect } from "react";
+import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { sendEmailVerification } from "firebase/auth";
+import { auth } from "./firebase";
 import { useAuthValue } from "./AuthContext";
 import "../../styles/verifyEmail.css";
 
@@ -12,43 +13,44 @@ function VerifyEmail() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      currentUser
-        ?.reload()
-        .then(() => {
-          if (currentUser?.emailVerified) {
+    const interval = setInterval(async () => {
+      if (currentUser) {
+        try {
+          await currentUser.reload();
+          if (currentUser.emailVerified) {
             clearInterval(interval);
             navigate("/");
           }
-        })
-        .catch((err) => {
-          alert(err.message);
-        });
+        } catch (err) {
+          toast.error("An error occurred. Please try again later.");
+        }
+      }
     }, 1000);
   }, [navigate, currentUser]);
 
   useEffect(() => {
-    let interval = null;
+    let timeInterval = null;
     if (timeActive && time !== 0) {
-      interval = setInterval(() => {
-        setTime((time) => time - 1);
+      timeInterval = setInterval(() => {
+        setTime((prevTime) => prevTime - 1);
       }, 1000);
     } else if (time === 0) {
       setTimeActive(false);
       setTime(60);
-      clearInterval(interval);
+      clearInterval(timeInterval);
     }
-    return () => clearInterval(interval);
+    return () => clearInterval(timeInterval);
   }, [timeActive, time, setTimeActive]);
 
-  const resendEmailVerification = () => {
-    sendEmailVerification(auth.currentUser)
-      .then(() => {
+  const resendEmailVerification = async () => {
+    if (auth.currentUser) {
+      try {
+        await sendEmailVerification(auth.currentUser);
         setTimeActive(true);
-      })
-      .catch((err) => {
-        alert(err.message);
-      });
+      } catch (err) {
+        toast.error("An error occurred. Please try again later.");
+      }
+    }
   };
 
   return (
@@ -58,10 +60,14 @@ function VerifyEmail() {
         <p>
           <strong>A Verification email has been sent to:</strong>
           <br />
-          <span>{currentUser?.email}</span>
+          <span>{currentUser && currentUser.email}</span>
         </p>
         <span>Follow the instruction in the email to verify your account</span>
-        <button onClick={resendEmailVerification} type="button" disabled={timeActive}>
+        <button
+          onClick={resendEmailVerification}
+          type="button"
+          disabled={timeActive}
+        >
           Resend Email
           {timeActive && time}
         </button>

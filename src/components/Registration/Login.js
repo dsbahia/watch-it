@@ -3,6 +3,7 @@ import {
   signInWithEmailAndPassword,
   sendEmailVerification,
 } from "firebase/auth";
+import { toast } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "./firebase";
 import { useAuthValue } from "./AuthContext";
@@ -15,22 +16,27 @@ function Login() {
   const { setTimeActive } = useAuthValue();
   const navigate = useNavigate();
 
-  const login = (e) => {
+  const login = async (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
-      .then(() => {
-        if (!auth.currentUser.emailVerified) {
-          sendEmailVerification(auth.currentUser)
-            .then(() => {
-              setTimeActive(true);
-              navigate("/verify-email");
-            })
-            .catch((err) => alert(err.message));
-        } else {
-          navigate("/");
-        }
-      })
-      .catch((err) => setError(err.message));
+
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+
+      if (!auth.currentUser.emailVerified) {
+        await sendEmailVerification(auth.currentUser);
+        setTimeActive(true);
+        navigate("/verify-email");
+      } else {
+        navigate("/");
+      }
+    } catch (err) {
+      setError("");
+      if (err.code === "auth/invalid-login-credentials") {
+        toast.error("Incorrect email or password. Please try again.");
+      } else {
+        toast.error("An error occurred. Please try again later.");
+      }
+    }
   };
 
   return (
