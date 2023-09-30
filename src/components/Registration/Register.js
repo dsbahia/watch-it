@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { toast } from "react-hot-toast";
 import {
   createUserWithEmailAndPassword,
   sendEmailVerification,
@@ -28,23 +29,35 @@ function Register() {
     return isValid;
   };
 
-  const register = (e) => {
+  const register = async (e) => {
     e.preventDefault();
     setError("");
+
     if (validatePassword()) {
-      createUserWithEmailAndPassword(auth, email, password)
-        .then(() => {
-          sendEmailVerification(auth.currentUser);
-        })
-        .then(() => {
-          setTimeActive(true);
-          navigate("/verify-email");
-        })
-        .catch((err) => alert(err.message));
+      try {
+        await createUserWithEmailAndPassword(auth, email, password);
+        await sendEmailVerification(auth.currentUser);
+        setTimeActive(true);
+        navigate("/verify-email");
+      } catch (err) {
+        setError("");
+
+        const errorMap = {
+          "auth/email-already-in-use": "Email is already in use.",
+          "auth/invalid-email": "Invalid email address.",
+          "auth/weak-password":
+            "Password is too weak. Please choose a stronger password.",
+        };
+
+        const errorMessage =
+          errorMap[err.code] || "An error occurred. Please try again later.";
+        toast.error(errorMessage);
+      }
+
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
     }
-    setEmail("");
-    setPassword("");
-    setConfirmPassword("");
   };
 
   return (
