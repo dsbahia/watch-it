@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import MoreDetails from "../MoreDetails";
+import Favourite from "../Favourite";
 import YouTubeIcon from "../YouTubeIcon/YouTubeIcon";
 import NoImagePlaceholder from "../../images/No-Image-Placeholder.png";
 import "../../styles/topratedmovies.css";
@@ -44,15 +45,21 @@ function UpcomingMovies({ posterpath, title, movieId, movieTrailer }) {
         )}
       </div>
       <div className="top-rated-title">{title}</div>
+
       <div className="more-details">
-        <button
-          className="more-details-link"
-          type="button"
-          onClick={handleClick}
-        >
-          More Details
-          <FontAwesomeIcon icon={faInfoCircle} className="icon" />
-        </button>
+        <div className="buttons">
+          <div className="favourites">
+            <Favourite />
+          </div>
+          <button
+            className="more-details-link"
+            type="button"
+            onClick={handleClick}
+          >
+            More Details
+            <FontAwesomeIcon icon={faInfoCircle} className="icon" />
+          </button>
+        </div>
         {isShown ? <MoreDetails type={type} id={movieId} /> : null}
       </div>
     </div>

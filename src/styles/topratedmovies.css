@@ -32,11 +32,22 @@
   text-align: right;
 }
 
+.buttons {
+  display: flex;
+  margin-top: 40px;
+}
+
+.favourites {
+
+  width: fit-content;
+}
+
 .more-details-link {
   text-decoration: none;
   color: #00adb5;
   background: none;
   border: none;
+  padding-left: 40px;
 }
 
 
