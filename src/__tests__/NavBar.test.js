@@ -1,10 +1,7 @@
 import React from "react";
 import { MemoryRouter, Link } from "react-router-dom";
 import { render } from "@testing-library/react";
-import {
-  AuthProvider,
-  useAuthValue,
-} from "../components/Registration/AuthContext";
+import { useAuthValue } from "../components/Registration/AuthContext";
 import NavBar from "../components/NavBar";
 import "@testing-library/jest-dom/extend-expect";
 
