@@ -3,11 +3,13 @@ import "../../styles/searchcard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { toast } from "react-hot-toast";
+import YouTubeIcon from "../YouTubeIcon/YouTubeIcon";
 import MoreDetails from "../MoreDetails";
 import NoImagePlaceholder from "../../images/No-Image-Placeholder.png";
 import api from "../../api/api";
 
 function SearchCard({ title, posterpath, movieId }) {
+  const [isHovered, setIsHovered] = useState(false);
   const [isShown, setIsShown] = useState(false);
   const [trailerUrl, setTrailerUrl] = useState([]);
   const movie = "movie";
@@ -24,7 +26,7 @@ function SearchCard({ title, posterpath, movieId }) {
           const videoUrl = `https://www.youtube.com/watch?v=${trailer.key}`;
           setTrailerUrl(videoUrl);
         } else {
-          console.error("Unexpected trailerData structure:", response);
+          setTrailerUrl("");
         }
       } catch (error) {
         const errorMsg = "An error occurred. Please try again later.";
@@ -57,7 +59,10 @@ function SearchCard({ title, posterpath, movieId }) {
               className="poster-img"
               alt={`${title} Movie poster`}
               src={posterCheck()}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
             />
+            {isHovered && <YouTubeIcon />}
           </a>
         ) : (
           <img
