@@ -104,11 +104,15 @@ exports[`App Renders Correctly 1`] = `
       </div>
     </div>
     <div>
-      <img
-        alt="Watch It Logo"
-        class="watch-it-logo"
-        src="watch-it.png"
-      />
+      <a
+        href="/"
+      >
+        <img
+          alt="Watch It Logo"
+          class="watch-it-logo"
+          src="watch-it.png"
+        />
+      </a>
       <div
         class="search-bar"
       >
