@@ -12,13 +12,13 @@
   max-width: 100%;
   height: auto;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  opacity: 1; /* Default opacity */
-  position: relative; /* Default position */
-  transition: opacity 0.3s; /* Add a transition for smoother hover effect */
+  opacity: 1; 
+  position: relative;
+  transition: opacity 0.3s; 
 }
 
 .top-rated-poster:hover .top-rated-poster-img {
-  opacity: 0.9; /* Adjusted opacity on hover */
+  opacity: 0.9; 
 }
 
 .top-rated-title {
@@ -30,6 +30,15 @@
 .more-details {
   margin-top: 10px;
   text-align: right;
+}
+
+.buttons {
+  display: flex;
+  margin-top: 40px;
+}
+
+.favourites {
+  width: fit-content;
 }
 
 .more-details-link {
