@@ -5,7 +5,8 @@ import watchItLogo from "../images/watch-it.png";
 function WatchItLogo() {
   const navigate = useNavigate();
 
-  const handleClick = () => {
+  const handleClick = (event) => {
+    event.preventDefault();
     navigate("/");
   };
 

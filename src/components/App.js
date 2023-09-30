@@ -16,6 +16,7 @@ import TopRatedTvShowContainer from "./TopRated/TopRatedTvShowContainer";
 import UpcomingMoviesContainer from "./Upcoming/UpcomingMoviesContainer";
 import AiringTvShowContainer from "./Upcoming/AiringTvShowsContainer";
 import "../styles/App.css";
+import Profile from "./ProfilePage";
 
 function App() {
   const [searchResults, setSearchResults] = useState({});
@@ -43,9 +44,9 @@ function App() {
   }, [searchResults]);
   return (
     <div className="App">
-      <Toaster />
-      <NavBar />
+      <Toaster />{" "}
       <AuthProvider value={{ currentUser, timeActive, setTimeActive }}>
+        <NavBar />
         <Routes>
           <Route
             exact
@@ -59,6 +60,7 @@ function App() {
           />
           <Route path="login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/verify-email" element={<VerifyEmail />} />
           <Route
             path="/top-rated-movies"
