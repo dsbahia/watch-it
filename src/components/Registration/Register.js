@@ -7,6 +7,7 @@ import {
 } from "firebase/auth";
 import { auth } from "./firebase";
 import { useAuthValue } from "./AuthContext";
+import WatchItLogo from "../WatchItLogo";
 import "../../styles/forms.css";
 
 function Register() {
@@ -61,6 +62,7 @@ function Register() {
   return (
     <div className="auth-container">
       <div className="auth-form">
+        <WatchItLogo />
         <h1>Register</h1>
         <form onSubmit={register} name="registration_form">
           <input

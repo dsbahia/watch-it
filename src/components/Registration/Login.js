@@ -7,6 +7,7 @@ import { toast } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "./firebase";
 import { useAuthValue } from "./AuthContext";
+import WatchItLogo from "../WatchItLogo";
 import "../../styles/forms.css";
 
 function Login() {
@@ -42,6 +43,7 @@ function Login() {
   return (
     <div className="auth-container">
       <div className="auth-form">
+        <WatchItLogo />
         <h1>Log in</h1>
         {error && <div className="auth-error">{error}</div>}
         <form onSubmit={login} name="login_form">
