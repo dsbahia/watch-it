@@ -41,7 +41,8 @@ exports[`SearchCard renders correctly 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="svg-inline--fa fa-star "
+              class="svg-inline--fa fa-star fa-2x "
+              color="#00ADB5"
               data-icon="star"
               data-prefix="far"
               focusable="false"

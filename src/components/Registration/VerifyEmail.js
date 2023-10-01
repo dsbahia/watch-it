@@ -54,22 +54,20 @@ function VerifyEmail() {
   };
 
   return (
-    <div className="center">
-      <div className="verify-email">
+    <div className="verify-email-container">
+      <div className="verify-email-contents">
         <h1>Verify your Email Address</h1>
         <p>
-          <strong>A Verification email has been sent to:</strong>
-          <br />
-          <span>{currentUser && currentUser.email}</span>
+          A Verification email has been sent to:{" "}
+          <strong>{currentUser && currentUser.email}</strong>
         </p>
-        <span>Follow the instruction in the email to verify your account</span>
+        <p>Follow the instructions in the email to verify your account.</p>
         <button
           onClick={resendEmailVerification}
           type="button"
           disabled={timeActive}
         >
-          Resend Email
-          {timeActive && time}
+          Resend Email {timeActive && `(${time})`}
         </button>
       </div>
     </div>
