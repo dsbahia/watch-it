@@ -3,7 +3,6 @@
 .pnp.js
 /coverage
 /build
-firebase.js
 .DS_Store
 .env
 .env.local
@@ -11,4 +10,3 @@ firebase.js
 .env.test.local
 .env.production.local
 npm-debug.log*
-src/components/Registration/firebase.js

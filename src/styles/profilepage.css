@@ -2,10 +2,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 192px;
+  height: 100vh;
   background-color: #eeeeeeee;
   text-align: center;
-  margin-bottom: 75px;
+  
 }
 
 .profile {
@@ -33,7 +33,19 @@
 }
 
 .profile-btn {
-  margin-top: 10px;
+  background-color: #00adb5;
+  color: #ffffff;
+  border: none;
   border-radius: 3.5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    box-shadow 0.3s;
+}
+
+.profile-btn:hover {
+  background-color: #007d86;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }

@@ -7,31 +7,32 @@ import {
 } from "firebase/auth";
 import { auth } from "./firebase";
 import { useAuthValue } from "./AuthContext";
+import WatchItLogo from "../WatchItLogo";
 import "../../styles/forms.css";
 
 function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [error, setError] = useState("");
   const { setTimeActive } = useAuthValue();
 
   const navigate = useNavigate();
 
+  const showPasswordValidationError = (errorMessage) => {
+    toast.error(errorMessage);
+  };
+
   const validatePassword = () => {
-    let isValid = true;
-    if (password !== "" && confirmPassword !== "") {
-      if (password !== confirmPassword) {
-        isValid = false;
-        setError("Passwords do not match");
-      }
+    if (password !== confirmPassword) {
+      showPasswordValidationError("Passwords do not match");
+      return false;
     }
-    return isValid;
+    return true;
   };
 
   const register = async (e) => {
     e.preventDefault();
-    setError("");
+    toast.dismiss();
 
     if (validatePassword()) {
       try {
@@ -40,8 +41,6 @@ function Register() {
         setTimeActive(true);
         navigate("/verify-email");
       } catch (err) {
-        setError("");
-
         const errorMap = {
           "auth/email-already-in-use": "Email is already in use.",
           "auth/invalid-email": "Invalid email address.",
@@ -63,8 +62,8 @@ function Register() {
   return (
     <div className="auth-container">
       <div className="auth-form">
+        <WatchItLogo />
         <h1>Register</h1>
-        {error && <div className="auth-error">{error}</div>}
         <form onSubmit={register} name="registration_form">
           <input
             type="email"
