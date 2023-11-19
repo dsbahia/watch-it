@@ -80,4 +80,28 @@
   .search-button {
     display: inline-block;
   }
+  .search-results-card,
+  .search-card {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .item {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px; 
+  }
+
+  .title-card {
+    font-size: 16px; 
+    margin-bottom: 8px; 
+  }
+
+  .overview-card {
+    font-size: 12px;
+  }
+
+  .no-results-message {
+    font-size: 18px;
+  }
 }
